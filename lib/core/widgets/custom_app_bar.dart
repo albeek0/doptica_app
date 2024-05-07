@@ -11,7 +11,7 @@ class CustomAppar extends StatelessWidget {
           icon: const Icon(Icons.chevron_left_sharp),
           onPressed: () {},
         ),
-        SizedBox(
+        const SizedBox(
           width: 300,
         ),
         IconButton(
