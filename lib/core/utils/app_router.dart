@@ -1,4 +1,3 @@
-
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
@@ -8,9 +7,8 @@ abstract class AppRouter {
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => const SpalshView(),
+        builder: (context, state) => const (),
       ),
-
     ],
   );
 }
