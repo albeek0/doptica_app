@@ -8,16 +8,36 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar:
-          BottomNavigationBar(backgroundColor: Colors.green, items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.abc), label: "home"),
-        BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
-        BottomNavigationBarItem(icon: Icon(Icons.settings), label: ""),
-        BottomNavigationBarItem(icon: Icon(Icons.check), label: ""),
-      ]),
+    return const Scaffold(
       backgroundColor: kPrimaryColor,
       body: HomeViewBody(),
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+    // bottomNavigationBar: BottomNavigationBar(
+    //       fixedColor: Colors.green,
+    //       backgroundColor: kPrimaryColor,
+    //       items: const [
+    //         BottomNavigationBarItem(
+    //             icon: Icon(
+    //               Icons.abc,
+    //             ),
+    //             label: "home",
+    //             backgroundColor: Colors.amber),
+    //         BottomNavigationBarItem(
+    //           icon: Icon(Icons.person),
+    //           label: "",
+    //         ),
+    //         BottomNavigationBarItem(icon: Icon(Icons.settings), label: ""),
+    //         BottomNavigationBarItem(icon: Icon(Icons.check), label: ""),
+    //       ]),
