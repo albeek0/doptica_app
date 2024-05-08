@@ -1,5 +1,6 @@
 import 'package:doptica_app/core/utils/app_style.dart';
 import 'package:doptica_app/core/widgets/custom_app_bar.dart';
+import 'package:doptica_app/featurs/tasks_featurs/widgets/custom_row_task.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -12,8 +13,30 @@ class TasksViewBody extends StatelessWidget {
       child: Column(
         children: [
           CustomAppar(),
-          CustomRowTask(
-            data: "to do",
+          SizedBox(
+            height: 50,
+          ),
+          Padding(
+            padding: EdgeInsets.all(50),
+            child: Column(
+              children: [
+                CustomRowTask(
+                  data: "to do",
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                CustomRowTask(
+                  data: "doing",
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                CustomRowTask(
+                  data: "done",
+                ),
+              ],
+            ),
           )
         ],
       ),
