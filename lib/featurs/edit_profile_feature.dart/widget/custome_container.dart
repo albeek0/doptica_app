@@ -11,7 +11,7 @@ class CustomeContainer extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
           gradient: LinearGradient(
-              begin: Alignment.centerLeft,
+              begin: Alignment.center,
               end: Alignment.bottomRight,
               colors: [kPrimaryColor, kSeconderyColor])),
       child: widget,
