@@ -1,5 +1,6 @@
 import 'package:doptica_app/constans.dart';
 import 'package:doptica_app/core/widgets/custom_app_bar.dart';
+import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/Circleavatar.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/custome_container.dart';
 import 'package:flutter/material.dart';
 
@@ -25,18 +26,9 @@ class EditProfileView extends StatelessWidget {
               )
             ],
           ),
-          body: Column(
+          body: const Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 10, left: 40),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.amberAccent,
-                      borderRadius: BorderRadius.circular(70)),
-                  width: 140,
-                  height: 140,
-                ),
-              )
+              CustomeCircleAvatar()
             ],
           )),
     );
