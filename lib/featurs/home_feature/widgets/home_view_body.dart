@@ -12,13 +12,28 @@ class HomeViewBody extends StatelessWidget {
     return const SafeArea(
       child: Column(
         children: [
-          SizedBox(
-            height: 25,
+          Stack(
+            children: [
+              SizedBox(
+                height: 25,
+              ),
+              CustomAppar(),
+              Positioned(
+                child: Center(
+                  child: Image(
+                    image: AssetImage(
+                      "assets/images/Logo Doptica f3 1.png",
+                    ),
+                  ),
+                ),
+              )
+            ],
           ),
-          CustomAppar(),
           CoustomGridView()
         ],
       ),
     );
   }
 }
+// Image(
+//                       image: AssetImage("assets/images/Logo Doptica f3 1.png"))
