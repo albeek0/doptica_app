@@ -13,8 +13,8 @@ class CustomeFormFiled extends StatelessWidget {
         child: TextFormField(
           decoration: InputDecoration(
               hintText: "enter your email",
-              border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(25))),
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(25))),
         ),
       ),
     );
