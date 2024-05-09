@@ -5,14 +5,11 @@ class CustomeCircleAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 10, right: 130),
-      child: Container(
-        decoration: BoxDecoration(
-            color: Colors.amberAccent, borderRadius: BorderRadius.circular(70)),
-        width: 140,
-        height: 140,
-      ),
+    return Container(
+      decoration: BoxDecoration(
+          color: Colors.amberAccent, borderRadius: BorderRadius.circular(70)),
+      width: 140,
+      height: 140,
     );
   }
 }

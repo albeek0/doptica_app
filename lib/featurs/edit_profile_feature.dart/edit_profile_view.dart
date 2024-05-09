@@ -34,19 +34,21 @@ class EditProfileView extends StatelessWidget {
               children: [
                 CustomeCircleAvatar(),
                 Padding(
-                  padding: EdgeInsets.only(top: 15, right: 130),
+                  padding: EdgeInsets.all(20.0),
                   child: Text(
                     "owner",
                     style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                   ),
                 ),
                 SizedBox(
-                  height: 130,
+                  height: 100,
                 ),
                 CutomeHintText(
                   hint: "email",
                 ),
-                CustomeFormFiled(hint2: "enter your email",),
+                CustomeFormFiled(
+                  hint2: "enter your email",
+                ),
                 SizedBox(
                   height: 10,
                 ),
@@ -54,11 +56,12 @@ class EditProfileView extends StatelessWidget {
                   padding: EdgeInsets.only(left: 20),
                   child: CutomeHintText(hint: "password"),
                 ),
-                CustomeFormFiled(hint2: "enter your password",),
+                CustomeFormFiled(
+                  hint2: "enter your password",
+                ),
               ],
             ),
           ])),
     );
   }
 }
-
