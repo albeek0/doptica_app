@@ -41,7 +41,7 @@ class EditProfileView extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 100,
+                  height: 70,
                 ),
                 CutomeHintText(
                   hint: "email",
