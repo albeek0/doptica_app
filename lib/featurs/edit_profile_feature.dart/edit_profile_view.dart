@@ -1,4 +1,3 @@
-import 'package:doptica_app/constans.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/Circleavatar.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/customeformfiled.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/CutomeHintText.dart';
