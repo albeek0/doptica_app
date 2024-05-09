@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CustomeFormFiled extends StatelessWidget {
-  const CustomeFormFiled({
+  const CustomeFormFiled({required this.hint2,
     super.key,
   });
-
+  final String hint2;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -12,7 +12,7 @@ class CustomeFormFiled extends StatelessWidget {
         width: 350,
         child: TextFormField(
           decoration: InputDecoration(
-              hintText: "enter your email",
+              hintText: hint2,
               border:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(25))),
         ),

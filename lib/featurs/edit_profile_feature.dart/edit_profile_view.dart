@@ -46,7 +46,7 @@ class EditProfileView extends StatelessWidget {
                 CutomeHintText(
                   hint: "email",
                 ),
-                CustomeFormFiled(),
+                CustomeFormFiled(hint2: "enter your email",),
                 SizedBox(
                   height: 10,
                 ),
@@ -54,7 +54,7 @@ class EditProfileView extends StatelessWidget {
                   padding: EdgeInsets.only(left: 20),
                   child: CutomeHintText(hint: "password"),
                 ),
-                CustomeFormFiled(),
+                CustomeFormFiled(hint2: "enter your password",),
               ],
             ),
           ])),
