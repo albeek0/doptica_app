@@ -11,9 +11,24 @@ class CustomeContainer extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
           gradient: LinearGradient(
-              begin: Alignment.center,
+              begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [kPrimaryColor, kSeconderyColor])),
+              stops: [
+            0.1,
+            0.50,
+            0.50,
+            0.40,
+            0.50,
+            0.50
+          ],
+              colors: [
+            kSeconderyColor,
+            kPrimaryColor,
+            kPrimaryColor,
+            kSeconderyColor,
+            kPrimaryColor,
+            kPrimaryColor,
+          ])),
       child: widget,
     );
   }
