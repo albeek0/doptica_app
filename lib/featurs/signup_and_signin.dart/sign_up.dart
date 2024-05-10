@@ -64,14 +64,17 @@ class SignUp extends StatelessWidget {
               SizedBox(
                   width: 283,
                   child: TextFormField(
-                    decoration:
-                        const InputDecoration(hintText: "YourEmail@Example"),
+                    decoration: const InputDecoration(
+                        hintText: "YourEmail@Example.com"),
                   )),
               const SizedBox(
                 height: 100,
               ),
               const CustomeButton(
                   text: "Sign Up", color: Color.fromARGB(255, 36, 97, 172)),
+              const SizedBox(
+                height: 10,
+              ),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -92,8 +95,9 @@ class SignUp extends StatelessWidget {
                 height: 10,
               ),
               Text(
-                "     By signing up you accept the\n $text1 and $text0 ",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                "        By signing up you accept the\n $text1 and $text0 ",
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
               ),
             ],
           ),
