@@ -1,7 +1,7 @@
 import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/Circleavatar.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/customeformfiled.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/CutomeHintText.dart';
-import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/custome_container.dart';
+import 'package:doptica_app/core/widgets/custome_container.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/widgets/customenavbar.dart';

@@ -1,8 +1,6 @@
-import 'package:doptica_app/constans.dart';
 import 'package:doptica_app/core/widgets/Cutomebutton.dart';
-import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/custome_container.dart';
+import 'package:doptica_app/core/widgets/custome_container.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
