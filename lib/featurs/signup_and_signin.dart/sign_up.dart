@@ -11,23 +11,6 @@ class SignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Text text = const Text(
-      "Terms of services",
-      style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 15,
-          color: Color.fromARGB(255, 0, 111, 247)),
-    );
-    Text text2 = const Text(
-      "privacy policys",
-      style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 15,
-          color: Color.fromARGB(255, 0, 111, 247)),
-    );
-    String? text0 = text2.data;
-    String? text1 = text.data;
-    print(text.data);
     return CustomeContainer(
       widget: Scaffold(
         appBar: AppBar(
@@ -94,11 +77,32 @@ class SignUp extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              Text(
-                "        By signing up you accept the\n $text1 and $text0 ",
-                style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-              ),
+              InkWell(
+                onTap: () {},
+                child: RichText(
+                    text: const TextSpan(children: <TextSpan>[
+                  TextSpan(
+                      text: "        By signing up you accept the\n",
+                      style: TextStyle(fontWeight: FontWeight.bold)),
+                  TextSpan(
+                    text: "Terms Of Servies",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                        color: Color.fromARGB(255, 0, 111, 247)),
+                  ),
+                  TextSpan(
+                      text: " and ",
+                      style: TextStyle(fontWeight: FontWeight.bold)),
+                  TextSpan(
+                    text: "Privecy Policeys",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                        color: Color.fromARGB(255, 0, 111, 247)),
+                  )
+                ])),
+              )
             ],
           ),
         ),
