@@ -2,8 +2,8 @@ import 'package:doptica_app/core/widgets/Cutomebutton.dart';
 import 'package:doptica_app/core/widgets/custome_container.dart';
 import 'package:flutter/material.dart';
 
-class SignUp extends StatelessWidget {
-  const SignUp({super.key});
+class Welcome extends StatelessWidget {
+  const Welcome({super.key});
 
   @override
   Widget build(BuildContext context) {

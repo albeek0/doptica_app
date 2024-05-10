@@ -11,7 +11,6 @@ class CustomeContainer extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
           gradient: LinearGradient(
-              tileMode: TileMode.clamp,
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               stops: [
