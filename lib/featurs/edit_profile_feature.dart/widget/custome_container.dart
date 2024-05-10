@@ -19,7 +19,7 @@ class CustomeContainer extends StatelessWidget {
             0.50,
             0.40,
             0.50,
-            0.50
+            0.50,
           ],
               colors: [
             kSeconderyColor,
