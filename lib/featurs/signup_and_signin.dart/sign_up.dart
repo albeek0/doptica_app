@@ -22,8 +22,8 @@ class SignUp extends StatelessWidget {
               Center(
                 child: Image.asset(
                   fit: BoxFit.fill,
-                  "assets/images/Logo Doptica f3 1.png",
-                  height: 60,
+                  "assets/images/Logo Doptica f3.png",
+                  height: 40,
                 ),
               ),
               const SizedBox(
