@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:doptica_app/constans.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -11,22 +13,17 @@ class CustomeContainer extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
           gradient: LinearGradient(
+              tileMode: TileMode.repeated,
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               stops: [
-            0.1,
-            0.50,
-            0.50,
-            0.40,
-            0.50,
-            0.50,
+            0.2,
+            0.5,
+            0.6
           ],
               colors: [
-            kSeconderyColor,
-            kPrimaryColor,
             kPrimaryColor,
             kSeconderyColor,
-            kPrimaryColor,
             kPrimaryColor,
           ])),
       child: widget,
