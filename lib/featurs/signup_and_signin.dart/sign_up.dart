@@ -32,13 +32,17 @@ class SignUp extends StatelessWidget {
                 text: "sign up",
                 color: Color.fromARGB(200, 45, 123, 220),
               ),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text(
-                  "log in",
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  onTap: () {},
+                  child: const Text(
+                    "log in",
+                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                  ),
                 ),
-              ),
+              )
             ],
           ),
         ),
