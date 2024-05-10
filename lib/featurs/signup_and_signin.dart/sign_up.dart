@@ -9,6 +9,9 @@ class SignUp extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomeContainer(
       widget: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+        ),
         backgroundColor: Colors.transparent,
         body: SafeArea(
           child: Column(
