@@ -9,7 +9,7 @@ class CustomeButton extends StatelessWidget {
     return MaterialButton(
       onPressed: () {},
       color: color,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: SizedBox(
         height: 50,
         width: 300,
