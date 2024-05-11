@@ -11,7 +11,7 @@ class CustomRowFilter extends StatelessWidget {
       child: Row(
         children: [
           ElevatedButton(
-              style: ButtonStyle(
+              style: const ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(kGridColor)),
               onPressed: () {},
               child: const Row(
@@ -29,11 +29,11 @@ class CustomRowFilter extends StatelessWidget {
                   ),
                 ],
               )),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           ElevatedButton(
-              style: ButtonStyle(
+              style: const ButtonStyle(
                 backgroundColor: MaterialStatePropertyAll(kGridColor),
               ),
               onPressed: () {},
@@ -52,11 +52,11 @@ class CustomRowFilter extends StatelessWidget {
                   ),
                 ],
               )),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           ElevatedButton(
-              style: ButtonStyle(
+              style: const ButtonStyle(
                 backgroundColor: MaterialStatePropertyAll(kGridColor),
               ),
               onPressed: () {},
