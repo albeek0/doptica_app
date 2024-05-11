@@ -6,8 +6,8 @@ import 'package:doptica_app/featurs/tasks_featurs/tasks_view.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
-  static const kNavigationView = '/';
-  static const kHomeView = '/HomeView';
+  // static const kNavigationView = '/';
+  static const kHomeView = '/';
   static const kEditProfileView = '/EditProfileView';
   static const kProfileView = '/ProfileView';
   static const kTasksView = '/TasksView';
