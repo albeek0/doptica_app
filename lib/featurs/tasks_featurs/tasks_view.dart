@@ -10,7 +10,7 @@ class TasksView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      floatingActionButton: CustomFloatActionBar(),
+      // floatingActionButton: CustomFloatActionBar(),
       backgroundColor: kPrimaryColor,
       body: TasksViewBody(),
     );
