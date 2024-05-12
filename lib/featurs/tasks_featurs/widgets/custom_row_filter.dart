@@ -39,62 +39,7 @@ class CustomRowFilter extends StatelessWidget {
   }
 }
 
-class Custombotton extends StatelessWidget {
-  const Custombotton({
-    super.key,
-    required this.data,
-    this.icon,
-  });
-  final IconData? icon;
-  final String data;
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-        style: const ButtonStyle(
-            backgroundColor: MaterialStatePropertyAll(kGridColor)),
-        onPressed: () {
-          showBottomSheet(
-              context: context,
-              builder: (BuildContext context) {
-                return Container(
-                    height: 218,
-                    width: 428,
-                    child: const Padding(
-                      padding: EdgeInsets.only(left: 40, right: 150, top: 40),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Filters",
-                            style: AppStyles.styleOpenSansRegular24,
-                          ),
-                          CustomDropBotton(
-                            data: "None",
-                          ),
-                          CustomDropBotton(
-                            data: "Assigned",
-                          ),
-                          CustomDropBotton(
-                            data: "Scheduled",
-                          )
-                        ],
-                      ),
-                    ));
-              });
-        },
-        child: Row(
-          children: [
-            Icon(icon, color: Colors.black),
-            Text(
-              data,
-              style:
-                  AppStyles.styleOpenSansBold10.copyWith(color: Colors.black),
-            )
-          ],
-        ));
-  }
-}
+
 
 
 // class test1 extends StatefulWidget {
