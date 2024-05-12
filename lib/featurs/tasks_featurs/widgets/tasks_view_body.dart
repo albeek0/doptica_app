@@ -7,9 +7,14 @@ import 'package:doptica_app/featurs/tasks_featurs/widgets/custom_row_task.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class TasksViewBody extends StatelessWidget {
+class TasksViewBody extends StatefulWidget {
   const TasksViewBody({super.key});
 
+  @override
+  State<TasksViewBody> createState() => _TasksViewBodyState();
+}
+
+class _TasksViewBodyState extends State<TasksViewBody> {
   @override
   Widget build(BuildContext context) {
     return const SafeArea(
