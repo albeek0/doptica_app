@@ -23,9 +23,6 @@ class HomeViewBody extends StatelessWidget {
           CustomAppar(),
           CoustomGridView(),
           CustomCalender(),
-          SizedBox(
-            height: 70,
-          )
         ],
       ),
     );

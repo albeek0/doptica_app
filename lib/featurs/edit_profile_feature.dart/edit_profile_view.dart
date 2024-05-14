@@ -13,7 +13,7 @@ class EditProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomeContainer(
       widget: Scaffold(
-          bottomNavigationBar: const CutomeNavBar(),
+          // bottomNavigationBar: const CutomeNavBar(),
           backgroundColor: Colors.transparent,
           appBar: AppBar(
             backgroundColor: Colors.transparent,
