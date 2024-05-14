@@ -1,5 +1,7 @@
 import 'package:doptica_app/constans.dart';
 import 'package:doptica_app/core/utils/app_router.dart';
+import 'package:doptica_app/core/widgets/custom_app_bar_new.dart';
+import 'package:doptica_app/core/widgets/custome_container.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/edit_profile_view.dart';
 import 'package:doptica_app/featurs/home_feature/widgets/custom_navigator_bar.dart';
 import 'package:doptica_app/featurs/home_feature/widgets/home_view_body.dart';
@@ -16,10 +18,14 @@ class HomeView extends StatelessWidget {
   // int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: kPrimaryColor,
+    return const CustomeContainer(
+        widget: Scaffold(
+      appBar: CuotomeAppBar(
+        label: "Home",
+      ),
+      backgroundColor: Colors.transparent,
       body: HomeViewBody(),
-    );
+    ));
   }
 }
 

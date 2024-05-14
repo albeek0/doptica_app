@@ -19,9 +19,9 @@ class _navitagationViewState extends State<navitagationView> {
   int selected = 0;
   List<Widget> listWidgets = const [
     HomeView(),
-    TasksView(),
     ProfileView(),
     EditProfileView(),
+    TasksView(),
   ];
   @override
   Widget build(BuildContext context) {

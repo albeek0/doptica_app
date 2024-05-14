@@ -1,6 +1,6 @@
 import 'package:doptica_app/constans.dart';
 import 'package:doptica_app/core/utils/app_style.dart';
-import 'package:doptica_app/core/widgets/custom_app_bar.dart';
+import 'package:doptica_app/core/widgets/custom_app_bar_new.dart';
 import 'package:doptica_app/featurs/tasks_featurs/widgets/app_bar_tow.dart';
 import 'package:doptica_app/featurs/tasks_featurs/widgets/custom_row_filter.dart';
 import 'package:doptica_app/featurs/tasks_featurs/widgets/custom_row_task.dart';
@@ -17,10 +17,12 @@ class TasksViewBody extends StatefulWidget {
 class _TasksViewBodyState extends State<TasksViewBody> {
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return ListView(
+      children:const  [
+SafeArea(
       child: Column(
         children: [
-          AbbarTow(),
+          // AbbarTow(),
           SizedBox(
             height: 50,
           ),
@@ -49,6 +51,9 @@ class _TasksViewBodyState extends State<TasksViewBody> {
           )
         ],
       ),
+    )
+
+      ],
     );
   }
 }

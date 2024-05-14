@@ -1,3 +1,4 @@
+import 'package:doptica_app/core/widgets/custom_app_bar_new.dart';
 import 'package:doptica_app/core/widgets/customenavbar.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/Circleavatar.dart';
 import 'package:doptica_app/core/widgets/custome_container.dart';
@@ -10,25 +11,14 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomeContainer(
+    return const CustomeContainer(
       widget: Scaffold(
           // bottomNavigationBar: const CutomeNavBar(),
           backgroundColor: Colors.transparent,
-          appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            leading: IconButton(
-              icon: const Icon(Icons.chevron_left_sharp),
-              onPressed: () {},
-            ),
-            title: const Text("Edit Profile"),
-            actions: [
-              IconButton(
-                icon: const Icon(Icons.density_medium),
-                onPressed: () {},
-              )
-            ],
+          appBar: CuotomeAppBar(
+            label: 'Profile View',
           ),
-          body: const Column(
+          body: Column(
             children: [
               Center(
                 child: Padding(

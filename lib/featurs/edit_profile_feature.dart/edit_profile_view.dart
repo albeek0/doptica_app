@@ -1,3 +1,4 @@
+import 'package:doptica_app/core/widgets/custom_app_bar_new.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/Circleavatar.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/customeformfiled.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/CutomeHintText.dart';
@@ -16,20 +17,7 @@ class EditProfileView extends StatelessWidget {
 
           // bottomNavigationBar: const CutomeNavBar(),
           backgroundColor: Colors.transparent,
-          appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            leading: IconButton(
-              icon: const Icon(Icons.chevron_left_sharp),
-              onPressed: () {},
-            ),
-            title: const Text("Edit Profile"),
-            actions: [
-              IconButton(
-                icon: const Icon(Icons.density_medium),
-                onPressed: () {},
-              )
-            ],
-          ),
+          appBar: CuotomeAppBar(label: "Edit Profile View",),
           body: ListView(children: const [
             Column(
               children: [

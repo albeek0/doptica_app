@@ -17,7 +17,7 @@ class CustomRowFilter extends StatelessWidget {
       child: Row(
         children: [
           Custombotton(
-            data: "incomplete tasks",
+            data: " tasks",
             icon: Icons.check,
           ),
           SizedBox(
