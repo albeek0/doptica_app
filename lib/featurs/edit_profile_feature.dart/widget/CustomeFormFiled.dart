@@ -18,7 +18,7 @@ class CustomeFormFiled extends StatelessWidget {
               label: Text(label),
               hintText: hint2,
               border: OutlineInputBorder(
-                  borderSide: BorderSide(width: 1),
+                  borderSide: const BorderSide(width: 1),
                   borderRadius: BorderRadius.circular(6))),
         ),
       ),

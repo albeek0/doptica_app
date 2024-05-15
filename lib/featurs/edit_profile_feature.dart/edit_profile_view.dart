@@ -17,35 +17,35 @@ class EditProfileView extends StatelessWidget {
 
           // bottomNavigationBar: const CutomeNavBar(),
           backgroundColor: Colors.transparent,
-          appBar: CuotomeAppBar(label: "Edit Profile View",),
-          body: ListView(children: const [
+          appBar: const CuotomeAppBar(label: "Edit Profile View",),
+          body: ListView(children:  [
             Column(
               children: [
-                CustomeCircleAvatar(),
-                Padding(
+                const CustomeCircleAvatar(),
+                const Padding(
                   padding: EdgeInsets.all(20.0),
                   child: Text(
                     "owner",
                     style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 70,
                 ),
-                CutomeHintText(
+                const CutomeHintText(
                   hint: "email",
                 ),
-                CustomeFormFiled(
+                CustomeFormFiled(label: "",
                   hint2: "enter your email",
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(left: 20),
                   child: CutomeHintText(hint: "password"),
                 ),
-                CustomeFormFiled(
+                CustomeFormFiled(label: "",
                   hint2: "enter your password",
                 ),
               ],

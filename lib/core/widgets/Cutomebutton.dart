@@ -10,7 +10,7 @@ class CustomeButton extends StatelessWidget {
   });
   final String text;
   final Color color;
-  final   ontap;
+  final    ontap ;
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
