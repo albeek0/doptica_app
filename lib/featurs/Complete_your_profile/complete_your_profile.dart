@@ -15,7 +15,8 @@ class CompleteYourProfile extends StatelessWidget {
     return CustomeContainer(
       widget: Scaffold(
         appBar: AppBar(
-          leading: IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back)),
+          leading:
+              IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back)),
           backgroundColor: Colors.transparent,
         ),
         backgroundColor: Colors.transparent,
