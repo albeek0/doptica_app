@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 class CustomeFormFiled extends StatelessWidget {
-  const CustomeFormFiled({required this.hint2,
+  const CustomeFormFiled({
+    required this.hint2,
     super.key,
+    required this.label,
   });
+  final String label;
   final String hint2;
   @override
   Widget build(BuildContext context) {
@@ -12,9 +15,11 @@ class CustomeFormFiled extends StatelessWidget {
         width: 350,
         child: TextFormField(
           decoration: InputDecoration(
+              label: Text(label),
               hintText: hint2,
-              border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(25))),
+              border: OutlineInputBorder(
+                  borderSide: BorderSide(width: 1),
+                  borderRadius: BorderRadius.circular(6))),
         ),
       ),
     );
