@@ -1,6 +1,8 @@
+import 'package:doptica_app/core/utils/app_router.dart';
 import 'package:doptica_app/core/widgets/Cutomebutton.dart';
 import 'package:doptica_app/core/widgets/custome_container.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
@@ -29,9 +31,12 @@ class Welcome extends StatelessWidget {
               const SizedBox(
                 height: 400,
               ),
-              const CustomeButton(
+              CustomeButton(
+                ontap: () {
+                  GoRouter.of(context).push(AppRouter.ksignup);
+                },
                 text: "sign up",
-                color: Color.fromARGB(200, 45, 123, 220),
+                color: const Color.fromARGB(200, 45, 123, 220),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),

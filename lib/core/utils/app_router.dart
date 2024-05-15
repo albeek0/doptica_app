@@ -14,9 +14,9 @@ abstract class AppRouter {
   static const kEditProfileView = '/EditProfileView';
   static const kProfileView = '/ProfileView';
   static const kTasksView = '/TasksView';
-  static const kwelcome = '/welcome';
-  static const ksignup = '/ SignUp';
-  static const knavitagationView = '/';
+  static const kwelcome = '/';
+  static const ksignup = '/signup';
+  static const knavitagationView = '/navitagationView';
 
   static final router = GoRouter(
     routes: [

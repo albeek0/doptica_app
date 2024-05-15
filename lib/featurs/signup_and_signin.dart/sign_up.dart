@@ -53,8 +53,9 @@ class SignUp extends StatelessWidget {
               const SizedBox(
                 height: 100,
               ),
-              const CustomeButton(
-                  text: "Sign Up", color: Color.fromARGB(255, 36, 97, 172)),
+               CustomeButton(
+                ontap: (){},
+                  text: "Sign Up", color: const Color.fromARGB(255, 36, 97, 172)),
               const SizedBox(
                 height: 10,
               ),

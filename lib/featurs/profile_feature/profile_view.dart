@@ -38,5 +38,4 @@ class ProfileView extends StatelessWidget {
     );
   }
 
-  void returnCustomeContainer({required Scaffold widget}) {}
 }
