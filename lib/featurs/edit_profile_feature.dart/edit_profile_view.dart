@@ -5,7 +5,7 @@ import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/CutomeHintT
 import 'package:doptica_app/core/widgets/custome_container.dart';
 import 'package:flutter/material.dart';
 
-import '../../core/widgets/customenavbar.dart';
+
 
 class EditProfileView extends StatelessWidget {
   const EditProfileView({super.key});
@@ -18,30 +18,30 @@ class EditProfileView extends StatelessWidget {
           // bottomNavigationBar: const CutomeNavBar(),
           backgroundColor: Colors.transparent,
           appBar: const CuotomeAppBar(label: "Edit Profile View",),
-          body: ListView(children:  [
+          body: ListView(children:  const [
             Column(
               children: [
-                const CustomeCircleAvatar(),
-                const Padding(
+                CustomeCircleAvatar(),
+                Padding(
                   padding: EdgeInsets.all(20.0),
                   child: Text(
                     "owner",
                     style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 70,
                 ),
-                const CutomeHintText(
+                CutomeHintText(
                   hint: "email",
                 ),
                 CustomeFormFiled(label: "",
                   hint2: "enter your email",
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 10,
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.only(left: 20),
                   child: CutomeHintText(hint: "password"),
                 ),

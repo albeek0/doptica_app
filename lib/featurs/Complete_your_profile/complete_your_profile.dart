@@ -1,11 +1,8 @@
 import 'package:doptica_app/constans.dart';
-import 'package:doptica_app/core/utils/app_router.dart';
 import 'package:doptica_app/core/utils/app_style.dart';
-import 'package:doptica_app/core/widgets/Cutomebutton.dart';
 import 'package:doptica_app/core/widgets/custome_container.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/customeformfiled.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class CompleteYourProfile extends StatelessWidget {
   const CompleteYourProfile({super.key});
@@ -44,7 +41,7 @@ class CompleteYourProfile extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                SizedBox(
+                const SizedBox(
                     height: 50,
                     width: 300,
                     child: CustomeFormFiled(
@@ -54,7 +51,7 @@ class CompleteYourProfile extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                SizedBox(
+                const SizedBox(
                     height: 50,
                     width: 300,
                     child: CustomeFormFiled(
