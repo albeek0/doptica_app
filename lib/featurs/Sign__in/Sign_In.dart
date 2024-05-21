@@ -4,8 +4,8 @@ import 'package:doptica_app/core/widgets/custome_container.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/customeformfiled.dart';
 import 'package:flutter/material.dart';
 
-class CompleteYourProfile extends StatelessWidget {
-  const CompleteYourProfile({super.key});
+class SignIn extends StatelessWidget {
+  const SignIn({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class CompleteYourProfile extends StatelessWidget {
                   height: 50,
                 ),
                 const Text(
-                  "Complete Your Profile",
+                  'Sign In With Your Account',
                   style: AppStyles.styleOpenSansBold20,
                 ),
                 const SizedBox(
@@ -46,7 +46,7 @@ class CompleteYourProfile extends StatelessWidget {
                     width: 300,
                     child: CustomeFormFiled(
                       hint2: '',
-                      label: "Full Name",
+                      label: "E-mail",
                     )),
                 const SizedBox(
                   height: 20,
@@ -58,63 +58,62 @@ class CompleteYourProfile extends StatelessWidget {
                       hint2: '',
                       label: "Password",
                     )),
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text(
-                    "must contain at least 8 charchters",
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                  ),
-                ),
                 const SizedBox(
                   height: 40,
                 ),
                 SizedBox(
-                  width: 200,
+                  width: 300,
                   height: 30,
                   child: MaterialButton(
                     onPressed: () {},
                     color: kSeconderyColor,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5)),
-                    child: const SizedBox(
-                      height: 50,
-                      width: 300,
-                      child: Center(
-                          child: Text(
-                        "Comlete",
-                        style: TextStyle(fontSize: 22),
-                      )),
+                    child: const Center(
+                        child: Text(
+                      "Sign In ",
+                      style: TextStyle(fontSize: 22),
+                    )),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Text(
+                  "Or Sign In With",
+                  style: AppStyles.styleOpenSansBold16,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(15.0),
+                    onTap: () {},
+                    child: Image.asset(
+                      "assets/images/Google__G__logo.svg.png",
+                      width: 30,
+                      height: 30,
                     ),
                   ),
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 50,
                 ),
-                InkWell(
-                  onTap: () {},
-                  child: RichText(
-                      text: const TextSpan(children: <TextSpan>[
-                    TextSpan(
-                        text: "           By signing up you accept the\n",
-                        style: TextStyle(fontWeight: FontWeight.bold)),
-                    TextSpan(
-                      text: "Terms Of Servies",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15,
-                          color: Color.fromARGB(255, 0, 111, 247)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Dont Have An Account?",
+                      style: AppStyles.styleOpenSansBold16,
                     ),
-                    TextSpan(
-                        text: " and ",
-                        style: TextStyle(fontWeight: FontWeight.bold)),
-                    TextSpan(
-                      text: "Privecy Policeys",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15,
-                          color: Color.fromARGB(255, 0, 111, 247)),
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      onTap: () {},
+                      child: const Text(
+                        "    SignUp",
+                        style: TextStyle(color: Colors.blue),
+                      ),
                     )
-                  ])),
+                  ],
                 )
               ],
             ),

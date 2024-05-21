@@ -1,4 +1,3 @@
-import 'package:doptica_app/constans.dart';
 import 'package:flutter/material.dart';
 
 class CustomDropBotton extends StatefulWidget {
@@ -10,7 +9,7 @@ class CustomDropBotton extends StatefulWidget {
 
 class _CustomDropBottonState extends State<CustomDropBotton> {
   String selectedMethod = "none none none";
-  List<DropdownMenuItem> ffff = [
+  List<DropdownMenuItem> ffff = const  [
     DropdownMenuItem(value: "Card", child: Text("card")),
     DropdownMenuItem(value: "Cash", child: Text("Cashe")),
     DropdownMenuItem(value: "frfr", child: Text("hrhr"))

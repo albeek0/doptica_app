@@ -1,4 +1,4 @@
-import 'package:doptica_app/featurs/Complete_your_profile/complete_your_profile.dart';
+import 'package:doptica_app/featurs/Sign__in/Sign_In.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/edit_profile_view.dart';
 import 'package:doptica_app/featurs/home_feature/home_view.dart';
 import 'package:doptica_app/featurs/navigation.dart';
@@ -18,7 +18,7 @@ abstract class AppRouter {
   static const kwelcome = '/welcome';
   static const ksignup = '/signup';
   static const knavitagationView = '/navitagationView';
-   static const kCompleteYourProfile = '/';
+  static const kCompleteYourProfile = '/';
 
   static final router = GoRouter(
     routes: [
@@ -53,9 +53,10 @@ abstract class AppRouter {
       GoRoute(
         path: ksignup,
         builder: (context, state) => const SignUp(),
-      ), GoRoute(
+      ),
+      GoRoute(
         path: kCompleteYourProfile,
-        builder: (context, state) => const CompleteYourProfile(),
+        builder: (context, state) => const SignIn(),
       ),
     ],
   );

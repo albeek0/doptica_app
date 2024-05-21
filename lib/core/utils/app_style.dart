@@ -50,10 +50,9 @@ abstract class AppStyles {
     fontFamily: "OpenSans",
     fontWeight: FontWeight.w500,
   );
- static const TextStyle styleOpenSansRegular18 = TextStyle(
+  static const TextStyle styleOpenSansRegular18 = TextStyle(
     fontSize: 18,
     fontFamily: "OpenSans",
     fontWeight: FontWeight.bold,
   );
-
 }
