@@ -1,8 +1,12 @@
 import 'package:doptica_app/constans.dart';
+import 'package:doptica_app/core/utils/app_router.dart';
 import 'package:doptica_app/core/utils/app_style.dart';
 import 'package:doptica_app/core/widgets/custome_container.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/customeformfiled.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../core/widgets/Cutomebutton.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
@@ -11,11 +15,11 @@ class SignIn extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomeContainer(
       widget: Scaffold(
-        appBar: AppBar(
-          leading:
-              IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back)),
-          backgroundColor: Colors.transparent,
-        ),
+        // appBar: AppBar(
+        //   leading:
+        //       IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back)),
+        //   backgroundColor: Colors.transparent,
+        // ),
         backgroundColor: Colors.transparent,
         body: ListView(children: [
           SafeArea(
@@ -61,21 +65,8 @@ class SignIn extends StatelessWidget {
                 const SizedBox(
                   height: 40,
                 ),
-                SizedBox(
-                  width: 300,
-                  height: 30,
-                  child: MaterialButton(
-                    onPressed: () {},
-                    color: kSeconderyColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5)),
-                    child: const Center(
-                        child: Text(
-                      "Sign In ",
-                      style: TextStyle(fontSize: 22),
-                    )),
-                  ),
-                ),
+                CustomeButton(
+                    ontap: () {}, text: "Sign In", color: kSeconderyColor),
                 const SizedBox(
                   height: 20,
                 ),
@@ -107,7 +98,9 @@ class SignIn extends StatelessWidget {
                     ),
                     InkWell(
                       splashColor: Colors.transparent,
-                      onTap: () {},
+                      onTap: () {
+                        GoRouter.of(context).push(AppRouter.ksignup);
+                      },
                       child: const Text(
                         "    SignUp",
                         style: TextStyle(color: Colors.blue),

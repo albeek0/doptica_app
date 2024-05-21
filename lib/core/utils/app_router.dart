@@ -5,6 +5,7 @@ import 'package:doptica_app/featurs/navigation.dart';
 import 'package:doptica_app/featurs/profile_feature/profile_view.dart';
 import 'package:doptica_app/featurs/signup_and_signin.dart/sign_up.dart';
 import 'package:doptica_app/featurs/signup_and_signin.dart/welcome.dart';
+import 'package:doptica_app/featurs/signup_and_signin.dart/widgets/Sign__up2.dart';
 import 'package:doptica_app/featurs/tasks_featurs/tasks_view.dart';
 
 import 'package:go_router/go_router.dart';
@@ -17,8 +18,9 @@ abstract class AppRouter {
   static const kTasksView = '/TasksView';
   static const kwelcome = '/welcome';
   static const ksignup = '/signup';
+  static const ksignup2 = '/signup2';
   static const knavitagationView = '/navitagationView';
-  static const kCompleteYourProfile = '/';
+  static const kSignIn = '/';
 
   static final router = GoRouter(
     routes: [
@@ -55,8 +57,12 @@ abstract class AppRouter {
         builder: (context, state) => const SignUp(),
       ),
       GoRoute(
-        path: kCompleteYourProfile,
+        path: kSignIn,
         builder: (context, state) => const SignIn(),
+      ),
+      GoRoute(
+        path: ksignup2,
+        builder: (context, state) => const SignUp2(),
       ),
     ],
   );

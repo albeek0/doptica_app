@@ -4,12 +4,9 @@ import 'package:doptica_app/core/widgets/Cutomebutton.dart';
 import 'package:doptica_app/core/widgets/custome_container.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/customeformfiled.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
-import '../../core/utils/app_router.dart';
-
-class SignUp extends StatelessWidget {
-  const SignUp({super.key});
+class SignUp2 extends StatelessWidget {
+  const SignUp2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,53 +37,29 @@ class SignUp extends StatelessWidget {
                 const SizedBox(
                   height: 100,
                 ),
-                const CustomeFormFiled(hint2: "", label: "Full name"),
+                const CustomeFormFiled(hint2: "", label: "Password"),
                 const SizedBox(
                   height: 20,
                 ),
-                const CustomeFormFiled(hint2: "", label: "E-mail"),
+                const CustomeFormFiled(hint2: "", label: "Confirm Password"),
                 const SizedBox(
                   height: 20,
                 ),
                 CustomeButton(
-                    ontap: () {
- GoRouter.of(context).push(AppRouter.ksignup2);
-
-                    }, text: "Continue", color: kSeconderyColor),
+                    ontap: () {}, text: "Sign up", color: kSeconderyColor),
                 const SizedBox(
                   height: 10,
-                ),
-                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      "Already have an account? ",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-                    ),
-                    InkWell(
-                      onTap: () {
-                         GoRouter.of(context).pop();
-                      },
-                      child: const Text(
-                        "Login",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            color: Color.fromARGB(255, 0, 111, 247)),
-                      ),
-                    )
-                  ],
                 ),
                 const SizedBox(
                   height: 10,
                 ),
                 InkWell(
+                  splashColor: Colors.transparent,
                   onTap: () {},
                   child: RichText(
                       text: const TextSpan(children: <TextSpan>[
                     TextSpan(
-                        text: "        By signing up you accept the\n",
+                        text: "          By signing up you accept the\n",
                         style: TextStyle(fontWeight: FontWeight.bold)),
                     TextSpan(
                       text: "Terms Of Servies",

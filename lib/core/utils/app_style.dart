@@ -6,6 +6,11 @@ abstract class AppStyles {
     fontFamily: "OpenSans",
     fontWeight: FontWeight.bold,
   );
+  static const TextStyle styleOpenSansBold24 = TextStyle(
+    fontSize: 24,
+    fontFamily: "OpenSans",
+    fontWeight: FontWeight.bold,
+  );
 
   static const TextStyle styleOpenSansBold16 = TextStyle(
     fontSize: 16,
