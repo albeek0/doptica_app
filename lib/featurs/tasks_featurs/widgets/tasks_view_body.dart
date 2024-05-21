@@ -1,7 +1,3 @@
-import 'package:doptica_app/constans.dart';
-import 'package:doptica_app/core/utils/app_style.dart';
-import 'package:doptica_app/core/widgets/custom_app_bar_new.dart';
-import 'package:doptica_app/featurs/tasks_featurs/widgets/app_bar_tow.dart';
 import 'package:doptica_app/featurs/tasks_featurs/widgets/custom_row_filter.dart';
 import 'package:doptica_app/featurs/tasks_featurs/widgets/custom_row_task.dart';
 import 'package:flutter/cupertino.dart';
