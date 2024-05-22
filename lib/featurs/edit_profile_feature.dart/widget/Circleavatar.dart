@@ -8,8 +8,8 @@ class CustomeCircleAvatar extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           color: Colors.amberAccent, borderRadius: BorderRadius.circular(70)),
-      width: 140,
-      height: 140,
+      width: 100,
+      height: 100,
     );
   }
 }
