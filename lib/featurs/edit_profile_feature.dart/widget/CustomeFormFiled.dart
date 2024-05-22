@@ -12,6 +12,7 @@ class CustomeFormFiled extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
+        height: 50,
         width: 350,
         child: TextFormField(
           decoration: InputDecoration(

@@ -48,10 +48,7 @@ class SignUp2 extends StatelessWidget {
                 CustomeButton(
                     ontap: () {}, text: "Sign up", color: kSeconderyColor),
                 const SizedBox(
-                  height: 10,
-                ),
-                const SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
                 InkWell(
                   splashColor: Colors.transparent,
