@@ -13,6 +13,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const CustomeContainer(
         widget: Scaffold(
+        
       appBar: CuotomeAppBar(
         label: "Home",
       ),

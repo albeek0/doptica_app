@@ -4,7 +4,6 @@ import 'package:doptica_app/core/widgets/custom_app_bar_new.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/Circleavatar.dart';
 import 'package:doptica_app/core/widgets/custome_container.dart';
 import 'package:doptica_app/featurs/profile_feature/widgets/IconWithText.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class ProfileView extends StatelessWidget {
