@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class CuotomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
-  Size get preferredSize => const Size.fromHeight(50);
+  Size get preferredSize => const Size.fromHeight(30);
   const CuotomeAppBar({
     super.key,
     required this.label,

@@ -13,8 +13,8 @@ import 'package:go_router/go_router.dart';
 abstract class AppRouter {
   // static const kNavigationView = '/';
   static const kHomeView = '/HomeView';
-  static const kEditProfileView = '/';
-  static const kProfileView = '/ProfileView';
+  static const kEditProfileView = '/EditProfileView';
+  static const kProfileView = '/';
   static const kTasksView = '/TasksView';
   static const kwelcome = '/welcome';
   static const ksignup = '/signup';

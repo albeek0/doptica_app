@@ -19,52 +19,65 @@ class EditProfileView extends StatelessWidget {
           appBar: const CuotomeAppBar(
             label: "Edit Profile ",
           ),
-          body: ListView(children:  [
+          body: ListView(children: const [
             Column(
               children: [
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      Text(
-                        "Rani",
-                        style: AppStyles.styleOpenSansBold20,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20, left: 200),
-                        child: CustomeCircleAvatar(),
-                      )
-                    ],
-                  ),
+                Padding(
+                  padding: EdgeInsets.only(right: 1),
+                  child: CustomeCircleAvatar(),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(right: 200),
+                Padding(
+                  padding: EdgeInsets.only(top: 10, right: 1),
                   child: Text(
-                    "ui/ux  designer",
-                    style: AppStyles.styleOpenSansBold20,
+                    "Rani Ismail",
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                   ),
                 ),
-Container(child: Row(children: [],),)
-
-
-
-
-
+                CutomeHintText(
+                  hint: "Name",
+                  right: 290,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 15),
+                  child: CustomeFormFiled(hint2: "Type your name", label: ""),
+                ),
+                CutomeHintText(
+                  hint: "UserName",
+                  right: 260,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 15),
+                  child:
+                      CustomeFormFiled(hint2: "Type Your Username", label: ""),
+                ),
+                CutomeHintText(
+                  hint: "Password",
+                  right: 260,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 15),
+                  child:
+                      CustomeFormFiled(hint2: "Type Your Password", label: ""),
+                ),
+                CutomeHintText(
+                  hint: "Confirm password",
+                  right: 190,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 15),
+                  child: CustomeFormFiled(hint2: "Confirm Password", label: ""),
+                ),
+                CutomeHintText(
+                  hint: "Department",
+                  right: 250,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 15),
+                  child: CustomeFormFiled(hint2: "Confirm Password", label: ""),
+                ),
               ],
             ),
           ])),
     );
   }
 }
-  // Padding(
-  //                 padding: EdgeInsets.only(top: 10, right: 180),
-  //                 child: Text(
-  //                   "Rani",
-  //                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-  //                 ),
-  //               ),
-
-      // Padding(
-      //             padding: EdgeInsets.only(right: 180),
-      //             child: CustomeCircleAvatar(),
-      //           ),

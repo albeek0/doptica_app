@@ -1,6 +1,10 @@
+import 'package:doptica_app/constans.dart';
+import 'package:doptica_app/core/widgets/Cutomebutton.dart';
 import 'package:doptica_app/core/widgets/custom_app_bar_new.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/Circleavatar.dart';
 import 'package:doptica_app/core/widgets/custome_container.dart';
+import 'package:doptica_app/featurs/profile_feature/widgets/IconWithText.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class ProfileView extends StatelessWidget {
@@ -8,31 +12,70 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CustomeContainer(
+    return CustomeContainer(
       widget: Scaffold(
+
           // bottomNavigationBar: const CutomeNavBar(),
           backgroundColor: Colors.transparent,
-          appBar: CuotomeAppBar(
+          appBar: const CuotomeAppBar(
             label: 'Profile View',
           ),
           body: Column(
             children: [
-              Center(
+              const Center(
                 child: Padding(
                   padding: EdgeInsets.all(8.0),
                   child: CustomeCircleAvatar(),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.all(8),
+              const Padding(
+                padding: EdgeInsets.all(4),
                 child: Text(
                   "owner",
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
               ),
+              const Padding(
+                padding: EdgeInsets.all(0),
+                child: Text(
+                  "@owner",
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.all(8),
+                child: Text(
+                  "Hi im Rani Ismail\n ui ux with DOPTICA\nteam ",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              CustomeButton(text: "Edit", color: kSeconderyColor, ontap: () {}),
+              const SizedBox(
+                height: 20,
+              ),
+              Container(
+                height: 3,
+                color: Colors.white,
+              ),
+              const IconWithText(
+                  iconData: Icons.settings_outlined, text: "Settings"),
+              const IconWithText(
+                  iconData: Icons.support_agent_outlined, text: "Support"),
+              const IconWithText(iconData: Icons.share, text: "Share"),
+              const IconWithText(
+                  iconData: Icons.question_mark_outlined, text: "About Us")
             ],
           )),
     );
   }
-
 }
