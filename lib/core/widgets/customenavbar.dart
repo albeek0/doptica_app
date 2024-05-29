@@ -8,12 +8,14 @@ class CutomeNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int index = 0 ;
+    int index = 0;
     return NavigationBar(
+      shadowColor: Colors.transparent,
+      height: 60,
       selectedIndex: index,
       backgroundColor: Colors.transparent,
       indicatorColor: kPrimaryColor,
-      overlayColor: MaterialStatePropertyAll(Colors.transparent),
+      // overlayColor: MaterialStatePropertyAll(Colors.transparent),
       destinations: const [
         NavigationDestination(
           icon: Icon(Icons.home),
