@@ -11,12 +11,12 @@ class HomeViewBody extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    final DateTime tody = DateTime.now();
 
-    return const Column(
+    return Column(
       children: [
-        CoustomGridView(),
-        CustomCalender(),
+        const SizedBox(height: 40),
+        SizedBox(height: 325, child: CoustomGridView()),
+        const CustomCalender(),
       ],
     );
   }

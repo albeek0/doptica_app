@@ -6,27 +6,30 @@ import 'package:flutter/painting.dart';
 
 class CustomCalender extends StatelessWidget {
   const CustomCalender({super.key});
+//
 
+//
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: kGridColor, borderRadius: BorderRadius.circular(20)),
+          color: Colors.transparent, borderRadius: BorderRadius.circular(20)),
       height: 220,
       width: 320,
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   "Calendar",
-                  style: AppStyles.styleOpenSansBold20
-                      .copyWith(color: Colors.black),
+                  style: AppStyles.styleOpenSansBold20,
                 ),
-                const Icon(Icons.calendar_month, color: Colors.black)
+                Icon(
+                  Icons.calendar_month,
+                )
               ],
             ),
           ),

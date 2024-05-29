@@ -1,16 +1,27 @@
 import 'package:doptica_app/constans.dart';
+import 'package:doptica_app/core/utils/app_style.dart';
 import 'package:flutter/material.dart';
 
+import 'custome_icons.dart';
+
 class CoustomGridView extends StatelessWidget {
-  const CoustomGridView({
+  CoustomGridView({
     super.key,
   });
+
+  List<IconData> icons = [
+    Icons.assignment_turned_in_outlined,
+    Icons.assignment_late_sharp,
+    Icons.boy_outlined,
+    Icons.analytics_outlined
+  ];
+  List<String> text = ['Tasks', 'Alarms', 'Members', 'Analytics'];
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.only(top: 20, right: 50, left: 50),
+        padding: const EdgeInsets.only(right: 50, left: 50),
         child: GridView.builder(
           itemCount: 4,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -18,15 +29,11 @@ class CoustomGridView extends StatelessWidget {
               //  childAspectRatio: 2 / 2
               ),
           itemBuilder: (context, index) {
-            return Container(
-              height: 150,
-              width: 150,
-              decoration: BoxDecoration(
-                  color: kGridColor, borderRadius: BorderRadius.circular(10)),
-            );
+            return CustomeIcons(icons: icons, text: text, index: index,);
           },
         ),
       ),
     );
   }
 }
+
