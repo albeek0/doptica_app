@@ -2,6 +2,7 @@ import 'package:doptica_app/featurs/Sign__in/Sign_In.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/edit_profile_view.dart';
 import 'package:doptica_app/featurs/home_feature/home_view.dart';
 import 'package:doptica_app/featurs/navigation.dart';
+import 'package:doptica_app/featurs/posts_feature/posts_screen.dart';
 import 'package:doptica_app/featurs/profile_feature/profile_view.dart';
 import 'package:doptica_app/featurs/signup_and_signin.dart/sign_up.dart';
 import 'package:doptica_app/featurs/signup_and_signin.dart/welcome.dart';
@@ -12,7 +13,7 @@ import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
   // static const kNavigationView = '/';
-  static const kHomeView = '/';
+  static const kHomeView = '/HomeView';
   static const kEditProfileView = '/EditProfileView';
   static const kProfileView = '/ProfileView';
   static const kTasksView = '/TasksView';
@@ -21,6 +22,7 @@ abstract class AppRouter {
   static const ksignup2 = '/signup2';
   static const knavitagationView = '/navitagationView';
   static const kSignIn = '/SignIn';
+  static const kPostsScreen = '/';
 
   static final router = GoRouter(
     routes: [
@@ -63,6 +65,10 @@ abstract class AppRouter {
       GoRoute(
         path: ksignup2,
         builder: (context, state) => const SignUp2(),
+      ),
+      GoRoute(
+        path: kPostsScreen,
+        builder: (context, state) => const PostsScreen(),
       ),
     ],
   );
