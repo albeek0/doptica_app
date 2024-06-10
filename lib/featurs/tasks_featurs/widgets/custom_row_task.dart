@@ -1,5 +1,4 @@
 import 'package:doptica_app/core/utils/app_style.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomRowTask extends StatelessWidget {

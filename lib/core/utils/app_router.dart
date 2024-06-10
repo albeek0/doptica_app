@@ -1,4 +1,4 @@
-import 'package:doptica_app/featurs/Sign__in/Sign_In.dart';
+import 'package:doptica_app/featurs/Sign__in/sign_in.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/edit_profile_view.dart';
 import 'package:doptica_app/featurs/home_feature/home_view.dart';
 import 'package:doptica_app/featurs/navigation.dart';
@@ -6,7 +6,7 @@ import 'package:doptica_app/featurs/posts_feature/posts_screen.dart';
 import 'package:doptica_app/featurs/profile_feature/profile_view.dart';
 import 'package:doptica_app/featurs/signup_and_signin.dart/sign_up.dart';
 import 'package:doptica_app/featurs/signup_and_signin.dart/welcome.dart';
-import 'package:doptica_app/featurs/signup_and_signin.dart/widgets/Sign__up2.dart';
+import 'package:doptica_app/featurs/signup_and_signin.dart/widgets/sign_up2.dart';
 import 'package:doptica_app/featurs/tasks_featurs/tasks_view.dart';
 
 import 'package:go_router/go_router.dart';
