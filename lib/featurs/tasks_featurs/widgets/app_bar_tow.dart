@@ -1,5 +1,4 @@
 import 'package:doptica_app/core/utils/app_style.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AbbarTow extends StatelessWidget {
@@ -13,7 +12,7 @@ class AbbarTow extends StatelessWidget {
           icon: const Icon(Icons.chevron_left_sharp),
           onPressed: () {},
         ),
-        Text(
+        const Text(
           "Tasks",
           style: AppStyles.styleOpenSansBold20,
         ),

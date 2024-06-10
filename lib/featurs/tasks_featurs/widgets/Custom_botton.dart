@@ -35,10 +35,10 @@ class Custombotton extends StatelessWidget {
     showBottomSheet(
         context: context,
         builder: (BuildContext context) {
-          return Container(
+          return const SizedBox(
               height: 218,
               width: 428,
-              child: const Padding(
+              child: Padding(
                 padding: EdgeInsets.only(left: 40, right: 150, top: 40),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
