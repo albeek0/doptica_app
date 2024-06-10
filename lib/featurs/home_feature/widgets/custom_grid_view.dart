@@ -1,5 +1,3 @@
-import 'package:doptica_app/constans.dart';
-import 'package:doptica_app/core/utils/app_style.dart';
 import 'package:flutter/material.dart';
 
 import 'custome_icons.dart';
@@ -9,13 +7,13 @@ class CoustomGridView extends StatelessWidget {
     super.key,
   });
 
-  List<IconData> icons = [
+  final List<IconData> icons = [
     Icons.assignment_turned_in_outlined,
     Icons.assignment_late_sharp,
     Icons.boy_outlined,
     Icons.analytics_outlined
   ];
-  List<String> text = ['Tasks', 'Alarms', 'Members', 'Analytics'];
+  final List<String> text = ['Tasks', 'Alarms', 'Members', 'Analytics'];
 
   @override
   Widget build(BuildContext context) {

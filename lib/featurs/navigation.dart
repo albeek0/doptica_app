@@ -1,32 +1,33 @@
 import 'package:doptica_app/constans.dart';
-import 'package:doptica_app/featurs/edit_profile_feature.dart/edit_profile_view.dart';
 import 'package:doptica_app/featurs/home_feature/home_view.dart';
 import 'package:doptica_app/featurs/profile_feature/profile_view.dart';
 import 'package:doptica_app/featurs/tasks_featurs/tasks_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-class navitagationView extends StatefulWidget {
-  const navitagationView({
+import 'posts_feature/posts_screen.dart';
+
+class NavitagationView extends StatefulWidget {
+  const NavitagationView({
     super.key,
   });
 
   @override
-  State<navitagationView> createState() => _navitagationViewState();
+  State<NavitagationView> createState() => _NavitagationViewState();
 }
 
-class _navitagationViewState extends State<navitagationView> {
+class _NavitagationViewState extends State<NavitagationView> {
   int selected = 0;
   List<Widget> listWidgets = const [
     HomeView(),
     ProfileView(),
-    EditProfileView(),
+    PostsScreen(),
     TasksView(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: NavigationBar(
+        height: 50,
         backgroundColor: kSeconderyColor,
         indicatorColor: kPrimaryColor,
         overlayColor: const MaterialStatePropertyAll(Colors.transparent),
@@ -42,7 +43,8 @@ class _navitagationViewState extends State<navitagationView> {
             label: "",
           ),
           NavigationDestination(icon: Icon(Icons.person), label: ""),
-          NavigationDestination(icon: Icon(Icons.settings), label: ""),
+          NavigationDestination(
+              icon: Icon(Icons.newspaper_outlined), label: ""),
           NavigationDestination(icon: Icon(Icons.task), label: "")
         ],
       ),

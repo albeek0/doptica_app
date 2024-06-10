@@ -1,6 +1,6 @@
 import 'package:doptica_app/constans.dart';
 import 'package:doptica_app/core/utils/app_style.dart';
-import 'package:doptica_app/core/widgets/Cutomebutton.dart';
+import 'package:doptica_app/core/widgets/customebutton.dart';
 import 'package:doptica_app/core/widgets/custome_container.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/customeformfiled.dart';
 import 'package:flutter/material.dart';

@@ -9,6 +9,7 @@ class CustomeButton extends StatelessWidget {
   });
   final String text;
   final Color color;
+  // ignore: prefer_typing_uninitialized_variables
   final ontap;
   @override
   Widget build(BuildContext context) {

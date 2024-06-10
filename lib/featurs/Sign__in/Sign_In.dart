@@ -6,7 +6,7 @@ import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/customeform
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../core/widgets/Cutomebutton.dart';
+import '../../core/widgets/customebutton.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});

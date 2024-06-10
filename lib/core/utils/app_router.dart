@@ -20,15 +20,15 @@ abstract class AppRouter {
   static const kwelcome = '/welcome';
   static const ksignup = '/signup';
   static const ksignup2 = '/signup2';
-  static const knavitagationView = '/navitagationView';
+  static const knavitagationView = '/';
   static const kSignIn = '/SignIn';
-  static const kPostsScreen = '/';
+  static const kPostsScreen = '/PostsScreen';
 
   static final router = GoRouter(
     routes: [
       GoRoute(
         path: knavitagationView,
-        builder: (context, state) => const navitagationView(),
+        builder: (context, state) => const NavitagationView(),
       ),
       // GoRoute(
       //   path: kNavigationView,
