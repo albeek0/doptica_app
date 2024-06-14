@@ -27,7 +27,8 @@ class _NavitagationViewState extends State<NavitagationView> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: NavigationBar(
-        height: 50,
+        animationDuration: const Duration(seconds: 1),
+        height: 60,
         backgroundColor: kSeconderyColor,
         indicatorColor: kPrimaryColor,
         overlayColor: const MaterialStatePropertyAll(Colors.transparent),
@@ -42,7 +43,7 @@ class _NavitagationViewState extends State<NavitagationView> {
             icon: Icon(Icons.home),
             label: "",
           ),
-          NavigationDestination(icon: Icon(Icons.person), label: ""),
+          NavigationDestination(icon: Icon(Icons.group), label: ""),
           NavigationDestination(
               icon: Icon(Icons.newspaper_outlined), label: ""),
           NavigationDestination(icon: Icon(Icons.task), label: "")
