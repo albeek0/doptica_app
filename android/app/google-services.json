@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "280805318054",
+    "project_id": "doptica-24d78",
+    "storage_bucket": "doptica-24d78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280805318054:android:89385f2fc9417cc1c4c367",
+        "android_client_info": {
+          "package_name": "com.example.doptica_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiWjrQ_4XIFFbgD5nKP4SXsQd82gyRk-w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
