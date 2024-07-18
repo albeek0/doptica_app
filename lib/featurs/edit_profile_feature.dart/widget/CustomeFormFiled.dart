@@ -4,8 +4,9 @@ class CustomeFormFiled extends StatelessWidget {
   const CustomeFormFiled({
     required this.hint2,
     super.key,
-    required this.label,
+    required this.label, required this.controller,
   });
+  final TextEditingController controller;
   final String label;
   final String hint2;
   @override
@@ -15,6 +16,7 @@ class CustomeFormFiled extends StatelessWidget {
         height: 45,
         width: 350,
         child: TextFormField(
+          controller: controller,
           decoration: InputDecoration(
               label: Text(label),
               hintText: hint2,

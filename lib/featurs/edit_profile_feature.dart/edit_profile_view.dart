@@ -10,6 +10,23 @@ class EditProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+
+TextEditingController name = TextEditingController();
+TextEditingController username = TextEditingController();
+TextEditingController passsword = TextEditingController();
+TextEditingController conpassword = TextEditingController();
+
+
+
+
+
+
+
+
+
+
+
     return CustomeContainer(
       widget: Scaffold(
 
@@ -18,61 +35,61 @@ class EditProfileView extends StatelessWidget {
           appBar: const CuotomeAppBar(
             label: "Edit Profile ",
           ),
-          body: ListView(children: const [
+          body: ListView(children:  [
             Column(
               children: [
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(right: 1),
                   child: CustomeCircleAvatar(),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(top: 10, right: 1),
                   child: Text(
                     "Rani Ismail",
                     style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                   ),
                 ),
-                CutomeHintText(
+                const CutomeHintText(
                   hint: "Name",
                   right: 290,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(bottom: 15),
-                  child: CustomeFormFiled(hint2: "Type your name", label: ""),
+                  padding: const EdgeInsets.only(bottom: 15),
+                  child: CustomeFormFiled(hint2: "Type your name", label: "", controller: name,),
                 ),
-                CutomeHintText(
+                const CutomeHintText(
                   hint: "UserName",
                   right: 260,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(bottom: 15),
+                  padding: const EdgeInsets.only(bottom: 15),
                   child:
-                      CustomeFormFiled(hint2: "Type Your Username", label: ""),
+                      CustomeFormFiled(hint2: "Type Your Username", label: "", controller: username,),
                 ),
-                CutomeHintText(
+                const CutomeHintText(
                   hint: "Password",
                   right: 260,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(bottom: 15),
+                  padding: const EdgeInsets.only(bottom: 15),
                   child:
-                      CustomeFormFiled(hint2: "Type Your Password", label: ""),
+                      CustomeFormFiled(hint2: "Type Your Password", label: "", controller: passsword,),
                 ),
-                CutomeHintText(
+                const CutomeHintText(
                   hint: "Confirm password",
                   right: 190,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(bottom: 15),
-                  child: CustomeFormFiled(hint2: "Confirm Password", label: ""),
+                  padding: const EdgeInsets.only(bottom: 15),
+                  child: CustomeFormFiled(hint2: "Confirm Password", label: "", controller: conpassword,),
                 ),
-                CutomeHintText(
+                const CutomeHintText(
                   hint: "Department",
                   right: 250,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(bottom: 15),
-                  child: CustomeFormFiled(hint2: "Confirm Password", label: ""),
+                  padding: const EdgeInsets.only(bottom: 15),
+                  child: CustomeFormFiled(hint2: "Confirm Password", label: "", controller: conpassword,),
                 ),
               ],
             ),

@@ -9,10 +9,15 @@ import 'package:go_router/go_router.dart';
 import '../../core/widgets/customebutton.dart';
 
 class SignIn extends StatelessWidget {
+  
   const SignIn({super.key});
 
   @override
   Widget build(BuildContext context) {
+
+TextEditingController email = TextEditingController();
+TextEditingController password = TextEditingController();
+
     return CustomeContainer(
       widget: Scaffold(
         // appBar: AppBar(
@@ -45,22 +50,23 @@ class SignIn extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                const SizedBox(
+                 SizedBox(
                     height: 50,
                     width: 300,
                     child: CustomeFormFiled(
                       hint2: '',
                       label: "E-mail",
+                      controller: email,
                     )),
                 const SizedBox(
                   height: 20,
                 ),
-                const SizedBox(
+                 SizedBox(
                     height: 50,
                     width: 300,
                     child: CustomeFormFiled(
                       hint2: '',
-                      label: "Password",
+                      label: "Password", controller: password,
                     )),
                 const SizedBox(
                   height: 40,

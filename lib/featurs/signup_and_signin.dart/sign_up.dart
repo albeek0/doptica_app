@@ -9,10 +9,15 @@ import 'package:go_router/go_router.dart';
 import '../../core/utils/app_router.dart';
 
 class SignUp extends StatelessWidget {
-  const SignUp({super.key});
+  
+
+   const SignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
+
+    TextEditingController newusername = TextEditingController();
+  TextEditingController newemail = TextEditingController();
     return CustomeContainer(
       widget: Scaffold(
         appBar: AppBar(
@@ -40,23 +45,24 @@ class SignUp extends StatelessWidget {
                 const SizedBox(
                   height: 100,
                 ),
-                const CustomeFormFiled(hint2: "", label: "Full name"),
+                 CustomeFormFiled(hint2: "", label: "Full name", controller: newusername,),
                 const SizedBox(
                   height: 20,
                 ),
-                const CustomeFormFiled(hint2: "", label: "E-mail"),
+                 CustomeFormFiled(hint2: "", label: "E-mail", controller: newemail,),
                 const SizedBox(
                   height: 20,
                 ),
                 CustomeButton(
                     ontap: () {
- GoRouter.of(context).push(AppRouter.ksignup2);
-
-                    }, text: "Continue", color: kSeconderyColor),
+                      GoRouter.of(context).push(AppRouter.ksignup2);
+                    },
+                    text: "Continue",
+                    color: kSeconderyColor),
                 const SizedBox(
                   height: 10,
                 ),
-                 Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
@@ -66,7 +72,7 @@ class SignUp extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                         GoRouter.of(context).pop();
+                        GoRouter.of(context).pop();
                       },
                       child: const Text(
                         "Login",

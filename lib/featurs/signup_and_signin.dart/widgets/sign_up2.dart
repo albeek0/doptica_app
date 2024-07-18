@@ -10,6 +10,9 @@ class SignUp2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    TextEditingController password  = TextEditingController();
+  TextEditingController conpassword = TextEditingController();
     return CustomeContainer(
       widget: Scaffold(
         appBar: AppBar(
@@ -37,11 +40,11 @@ class SignUp2 extends StatelessWidget {
                 const SizedBox(
                   height: 100,
                 ),
-                const CustomeFormFiled(hint2: "", label: "Password"),
+                 CustomeFormFiled(hint2: "", label: "Password", controller: password,),
                 const SizedBox(
                   height: 20,
                 ),
-                const CustomeFormFiled(hint2: "", label: "Confirm Password"),
+                 CustomeFormFiled(hint2: "", label: "Confirm Password", controller: conpassword,),
                 const SizedBox(
                   height: 20,
                 ),

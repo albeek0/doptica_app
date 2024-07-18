@@ -41,12 +41,15 @@ class _NavitagationViewState extends State<NavitagationView> {
         destinations: const [
           NavigationDestination(
             icon: Icon(Icons.home),
-            label: "",
+            label: 'Home',
           ),
-          NavigationDestination(icon: Icon(Icons.group), label: ""),
           NavigationDestination(
-              icon: Icon(Icons.newspaper_outlined), label: ""),
-          NavigationDestination(icon: Icon(Icons.task), label: "")
+            icon: Icon(Icons.group),
+            label: 'Groupes',
+          ),
+          NavigationDestination(
+              icon: Icon(Icons.newspaper_outlined), label: "Posts"),
+          NavigationDestination(icon: Icon(Icons.task), label: "Tasks")
         ],
       ),
       body: Center(

@@ -20,8 +20,8 @@ abstract class AppRouter {
   static const kwelcome = '/welcome';
   static const ksignup = '/signup';
   static const ksignup2 = '/signup2';
-  static const knavitagationView = '/';
-  static const kSignIn = '/SignIn';
+  static const knavitagationView = '/navitagationView';
+  static const kSignIn = '/';
   static const kPostsScreen = '/PostsScreen';
 
   static final router = GoRouter(
