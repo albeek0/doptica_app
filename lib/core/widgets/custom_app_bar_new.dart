@@ -15,7 +15,7 @@ class CuotomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.transparent,
       title: Text(
         label,
-        style: AppStyles.styleOpenSansBold20,
+        style: AppStyles.styleOpenSansBold24,
       ),
       actions: [
         IconButton(

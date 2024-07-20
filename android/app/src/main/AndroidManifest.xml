@@ -4,7 +4,11 @@
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true"
+        
         >
+        <meta-data
+        android:name="com.google.firebase.appcheck.SafetyNetProvider"
+        android:value="@string/app_check_provider_key"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

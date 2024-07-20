@@ -11,7 +11,7 @@ import '../../core/utils/app_router.dart';
 class SignUp extends StatelessWidget {
   
 
-   const SignUp({super.key});
+    const SignUp({super.key});
 
   @override
   Widget build(BuildContext context) {

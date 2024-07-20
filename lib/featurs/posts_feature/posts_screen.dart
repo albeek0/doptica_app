@@ -9,27 +9,25 @@ class PostsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomeContainer(
+    return const CustomeContainer(
         widget: Scaffold(
       backgroundColor: Colors.transparent,
-      appBar: const CuotomeAppBar(
+      appBar: CuotomeAppBar(
         label: 'Posts',
       ),
-      body: Container(
-        padding: const EdgeInsets.only(left: 30),
-        child: const Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(right: 175, bottom: 5, top: 5),
-              child: Text(
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
                 "Hello User",
                 style: AppStyles.styleOpenSansBold24,
               ),
-            ),
-            PostsWidget()
-          ],
+              PostsWidget()
+            ],
+          ),
         ),
       ),
     ));

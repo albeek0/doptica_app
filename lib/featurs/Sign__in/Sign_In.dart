@@ -1,30 +1,38 @@
+import 'dart:ffi';
+
 import 'package:doptica_app/constans.dart';
+import 'package:doptica_app/core/Auth/auth.dart';
 import 'package:doptica_app/core/utils/app_router.dart';
 import 'package:doptica_app/core/utils/app_style.dart';
 import 'package:doptica_app/core/widgets/custome_container.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/customeformfiled.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/widgets/customebutton.dart';
 
 class SignIn extends StatelessWidget {
-  
   const SignIn({super.key});
 
   @override
   Widget build(BuildContext context) {
-
-TextEditingController email = TextEditingController();
-TextEditingController password = TextEditingController();
+    FireBaseAuth _auth = FireBaseAuth();
+    TextEditingController _email = TextEditingController();
+    TextEditingController _password = TextEditingController();
+    signin() async {
+      String email = _email.text;
+      String password = _password.text;
+      User? user = await _auth.signinwithemailandpassword(email, password);
+      if (user != null) {
+        GoRouter.of(context).push(AppRouter.knavitagationView);
+      } else {
+        print("eroor=====================================error");
+      }
+    }
 
     return CustomeContainer(
       widget: Scaffold(
-        // appBar: AppBar(
-        //   leading:
-        //       IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back)),
-        //   backgroundColor: Colors.transparent,
-        // ),
         backgroundColor: Colors.transparent,
         body: ListView(children: [
           SafeArea(
@@ -50,29 +58,34 @@ TextEditingController password = TextEditingController();
                 const SizedBox(
                   height: 30,
                 ),
-                 SizedBox(
+                SizedBox(
                     height: 50,
                     width: 300,
                     child: CustomeFormFiled(
                       hint2: '',
                       label: "E-mail",
-                      controller: email,
+                      controller: _email,
                     )),
                 const SizedBox(
                   height: 20,
                 ),
-                 SizedBox(
+                SizedBox(
                     height: 50,
                     width: 300,
                     child: CustomeFormFiled(
                       hint2: '',
-                      label: "Password", controller: password,
+                      label: "Password",
+                      controller: _password,
                     )),
                 const SizedBox(
                   height: 40,
                 ),
                 CustomeButton(
-                    ontap: () {}, text: "Sign In", color: kSeconderyColor),
+                    ontap: () {
+                      signin();
+                    },
+                    text: "Sign In",
+                    color: kSeconderyColor),
                 const SizedBox(
                   height: 20,
                 ),
