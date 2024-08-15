@@ -1,4 +1,4 @@
-import 'package:doptica_app/constans.dart';
+import 'package:doptica_app/core/utils/constans.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 

@@ -1,4 +1,4 @@
-import 'package:doptica_app/constans.dart';
+import 'package:doptica_app/core/utils/constans.dart';
 import 'package:doptica_app/featurs/groubs_feature/groubs_view.dart';
 import 'package:doptica_app/featurs/home_feature/home_view.dart';
 import 'package:doptica_app/featurs/profile_feature/profile_view.dart';
