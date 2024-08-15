@@ -1,4 +1,4 @@
-import 'package:doptica_app/core/utils/constans.dart';
+import 'package:doptica_app/constans.dart';
 import 'package:doptica_app/core/widgets/customebutton.dart';
 import 'package:doptica_app/core/widgets/custom_app_bar_new.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/circleavatar.dart';

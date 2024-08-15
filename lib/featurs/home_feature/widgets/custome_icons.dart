@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../core/utils/constans.dart';
+import '../../../constans.dart';
 
 class CustomeIcons extends StatelessWidget {
   const CustomeIcons({
