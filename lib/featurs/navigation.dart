@@ -1,8 +1,7 @@
 import 'package:doptica_app/constans.dart';
 import 'package:doptica_app/featurs/groubs_feature/groubs_view.dart';
 import 'package:doptica_app/featurs/home_feature/home_view.dart';
-import 'package:doptica_app/featurs/profile_feature/profile_view.dart';
-import 'package:doptica_app/featurs/tasks_featurs/tasks_view.dart';
+import 'package:doptica_app/featurs/tasks_featurs/widgets/tasks_view.dart';
 import 'package:flutter/material.dart';
 
 import 'posts_feature/posts_screen.dart';

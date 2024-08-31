@@ -9,7 +9,7 @@ class PostsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: SizedBox(
-        width: 320,
+        width: 390,
         child: ListView.builder(
           itemCount: 4,
           itemBuilder: (BuildContext context, int index) {
@@ -47,8 +47,7 @@ class PostsWidget extends StatelessWidget {
                           ),
                           const Expanded(
                               child: Column(
-                            crossAxisAlignment:
-                                CrossAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 'rani',

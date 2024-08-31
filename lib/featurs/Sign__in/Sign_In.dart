@@ -1,4 +1,5 @@
-import 'dart:ffi';
+
+import 'dart:async';
 
 import 'package:doptica_app/constans.dart';
 import 'package:doptica_app/core/Auth/auth.dart';
@@ -20,7 +21,7 @@ class SignIn extends StatelessWidget {
     FireBaseAuth _auth = FireBaseAuth();
     TextEditingController _email = TextEditingController();
     TextEditingController _password = TextEditingController();
-    signin() async {
+    Future<void> signin() async {
       String email = _email.text;
       String password = _password.text;
       User? user = await _auth.signinwithemailandpassword(email, password);

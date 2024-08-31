@@ -8,7 +8,7 @@ import 'package:doptica_app/featurs/profile_feature/profile_view.dart';
 import 'package:doptica_app/featurs/signup_and_signin.dart/sign_up.dart';
 import 'package:doptica_app/featurs/signup_and_signin.dart/welcome.dart';
 import 'package:doptica_app/featurs/signup_and_signin.dart/widgets/sign_up2.dart';
-import 'package:doptica_app/featurs/tasks_featurs/tasks_view.dart';
+import 'package:doptica_app/featurs/tasks_featurs/widgets/tasks_view.dart';
 
 import 'package:go_router/go_router.dart';
 
