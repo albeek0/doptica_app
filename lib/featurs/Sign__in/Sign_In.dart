@@ -19,26 +19,39 @@ class SignIn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    FireBaseAuth _auth = FireBaseAuth();
-    TextEditingController _email = TextEditingController();
-    TextEditingController _password = TextEditingController();
-    Future<void> signin() async {
-      String email = _email.text;
-      String password = _password.text;
-      User? user = await _auth.signinwithemailandpassword(email, password);
-      if (user != null) {
-        GoRouter.of(context).push(AppRouter.knavitagationView);
-      } else {
-        print("eroor=====================================error");
-      }
-    }
+    TextEditingController email = TextEditingController();
+    TextEditingController password = TextEditingController();
 
-    return CustomeContainer(
-      widget: BlocListener<SigninCubit, SigninState>(
-        listener: (context, state) {
-         
-        },
-        child: Scaffold(
+    return BlocListener<SigninCubit, SigninState>(
+      listener: (context, state) {
+        if (state is SigninLoading) {
+          showDialog(
+              context: context,
+              builder: (context) {
+                return const Center(
+                    child: CircularProgressIndicator(
+                  color: kPrimaryColor,
+                ));
+              });
+        } else {
+          GoRouter.of(context).pop();
+          if (state is SigninSucces) {
+            GoRouter.of(context).push(AppRouter.knavitagationView);
+          } else if (state is SigninFailure) {
+            showDialog(
+                context: context,
+                builder: (context) {
+                  return const AlertDialog(
+                    title: Text('somthing went wrong '),
+                  );
+                });
+
+          
+          }
+        }
+      },
+      child: CustomeContainer(
+        widget: Scaffold(
           backgroundColor: Colors.transparent,
           body: ListView(children: [
             SafeArea(
@@ -70,7 +83,7 @@ class SignIn extends StatelessWidget {
                       child: CustomeFormFiled(
                         hint2: '',
                         label: "E-mail",
-                        controller: _email,
+                        controller: email,
                       )),
                   const SizedBox(
                     height: 20,
@@ -81,14 +94,15 @@ class SignIn extends StatelessWidget {
                       child: CustomeFormFiled(
                         hint2: '',
                         label: "Password",
-                        controller: _password,
+                        controller: password,
                       )),
                   const SizedBox(
                     height: 40,
                   ),
                   CustomeButton(
                       ontap: () {
-                        signin();
+                        BlocProvider.of<SigninCubit>(context).signin(
+                            email: email.text, password: password.text);
                       },
                       text: "Sign In",
                       color: kSeconderyColor),

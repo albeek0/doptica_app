@@ -21,8 +21,8 @@ abstract class AppRouter {
   static const kwelcome = '/welcome';
   static const ksignup = '/signup';
   static const ksignup2 = '/signup2';
-  static const knavitagationView = '/';
-  static const kSignIn = '/signin';
+  static const knavitagationView = '/navitagationView';
+  static const kSignIn = '/';
   static const kPostsScreen = '/PostsScreen';
   static const kgroubsview = '/groubsview';
 

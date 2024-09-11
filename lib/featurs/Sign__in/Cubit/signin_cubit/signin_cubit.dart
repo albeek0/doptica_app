@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable, unused_catch_clause
+
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:meta/meta.dart';
