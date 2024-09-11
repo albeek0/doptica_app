@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 
 class CustomeFormFiled extends StatelessWidget {
-  const CustomeFormFiled({
-    required this.hint2,
+  CustomeFormFiled({
     super.key,
-    required this.label, required this.controller,
+    required this.label,
+    required this.controller,
+    required this.hint2,
   });
+
   final TextEditingController controller;
   final String label;
   final String hint2;
+
   @override
   Widget build(BuildContext context) {
     return Center(

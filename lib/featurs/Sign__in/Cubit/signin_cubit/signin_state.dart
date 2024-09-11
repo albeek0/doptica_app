@@ -9,6 +9,7 @@ final class SigninLoading extends SigninState {}
 
 final class SigninSucces extends SigninState {}
 
-final class SigninFailure  extends SigninState {}
-
-
+final class SigninFailure extends SigninState {
+  final String errmessege;
+  SigninFailure({required this.errmessege});
+}

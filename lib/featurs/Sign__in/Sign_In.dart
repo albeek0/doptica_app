@@ -1,24 +1,21 @@
-import 'dart:async';
-
 import 'package:doptica_app/constans.dart';
-import 'package:doptica_app/core/Auth/auth.dart';
 import 'package:doptica_app/core/utils/app_router.dart';
 import 'package:doptica_app/core/utils/app_style.dart';
 import 'package:doptica_app/core/widgets/custome_container.dart';
 import 'package:doptica_app/featurs/Sign__in/Cubit/signin_cubit/signin_cubit.dart';
-import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/customeformfiled.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../core/widgets/customebutton.dart';
+import 'widgets/SignInForm.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final formkey = GlobalKey<FormState>();
     TextEditingController email = TextEditingController();
     TextEditingController password = TextEditingController();
 
@@ -26,27 +23,37 @@ class SignIn extends StatelessWidget {
       listener: (context, state) {
         if (state is SigninLoading) {
           showDialog(
-              context: context,
-              builder: (context) {
-                return const Center(
-                    child: CircularProgressIndicator(
+            context: context,
+            // Prevent manual dismissal
+            builder: (context) {
+              return const Center(
+                child: CircularProgressIndicator(
                   color: kPrimaryColor,
-                ));
-              });
+                ),
+              );
+            },
+          );
         } else {
-          GoRouter.of(context).pop();
+          // Ensure the loading dialog is dismissed before showing any other dialogs or navigating
+          Navigator.of(context, rootNavigator: true)
+              .pop(); // Dismiss the loading dialog
+
           if (state is SigninSucces) {
             GoRouter.of(context).push(AppRouter.knavitagationView);
           } else if (state is SigninFailure) {
+            // Display the error dialog
             showDialog(
-                context: context,
-                builder: (context) {
-                  return const AlertDialog(
-                    title: Text('somthing went wrong '),
-                  );
-                });
-
-          
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  elevation: 1000,
+                  backgroundColor: kSeconderyColor,
+                  title: const Text('Sign In Error'),
+                  content: Text(
+                      state.errmessege), // Display the detailed error message
+                );
+              },
+            );
           }
         }
       },
@@ -77,32 +84,17 @@ class SignIn extends StatelessWidget {
                   const SizedBox(
                     height: 30,
                   ),
-                  SizedBox(
-                      height: 50,
-                      width: 300,
-                      child: CustomeFormFiled(
-                        hint2: '',
-                        label: "E-mail",
-                        controller: email,
-                      )),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  SizedBox(
-                      height: 50,
-                      width: 300,
-                      child: CustomeFormFiled(
-                        hint2: '',
-                        label: "Password",
-                        controller: password,
-                      )),
+                  SignInForm(
+                      formkey: formkey, email: email, password: password),
                   const SizedBox(
                     height: 40,
                   ),
                   CustomeButton(
                       ontap: () {
-                        BlocProvider.of<SigninCubit>(context).signin(
-                            email: email.text, password: password.text);
+                        if (formkey.currentState!.validate()) {
+                          BlocProvider.of<SigninCubit>(context).signin(
+                              email: email.text, password: password.text);
+                        }
                       },
                       text: "Sign In",
                       color: kSeconderyColor),
