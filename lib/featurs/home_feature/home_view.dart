@@ -15,7 +15,7 @@ class HomeView extends StatelessWidget {
         label: "Home",
       ),
       backgroundColor: Colors.transparent,
-      body: HomeViewBody(),
+      body: SingleChildScrollView(child: HomeViewBody()),
     ));
   }
 }

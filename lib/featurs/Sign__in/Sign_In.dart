@@ -3,7 +3,6 @@ import 'package:doptica_app/core/utils/app_router.dart';
 import 'package:doptica_app/core/utils/app_style.dart';
 import 'package:doptica_app/core/widgets/custome_container.dart';
 import 'package:doptica_app/featurs/Sign__in/Cubit/signin_cubit/signin_cubit.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -18,6 +17,8 @@ class SignIn extends StatelessWidget {
     final formkey = GlobalKey<FormState>();
     TextEditingController email = TextEditingController();
     TextEditingController password = TextEditingController();
+    // email.dispose();
+    // password.dispose();
 
     return BlocListener<SigninCubit, SigninState>(
       listener: (context, state) {
@@ -109,7 +110,11 @@ class SignIn extends StatelessWidget {
                     padding: const EdgeInsets.all(15.0),
                     child: InkWell(
                       borderRadius: BorderRadius.circular(15.0),
-                      onTap: () {},
+                      onTap: () {
+                        
+                        BlocProvider.of<SigninCubit>(context)
+                            .signinwithgoogle();
+                      },
                       child: Image.asset(
                         "assets/images/Google__G__logo.svg.png",
                         width: 30,

@@ -12,7 +12,20 @@
           "package_name": "com.example.doptica_app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "280805318054-k5iv4392cbrao9cad78id8dl0t3qhr0b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.doptica_app",
+            "certificate_hash": "45fc2144804db5c0c66a7e4710ca6572475b7648"
+          }
+        },
+        {
+          "client_id": "280805318054-40b3qjppc3klpo6snn1c8gkb3mru1dqr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCiWjrQ_4XIFFbgD5nKP4SXsQd82gyRk-w"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "280805318054-40b3qjppc3klpo6snn1c8gkb3mru1dqr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

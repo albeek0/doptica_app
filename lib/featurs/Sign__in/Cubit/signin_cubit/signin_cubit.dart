@@ -23,11 +23,20 @@ class SigninCubit extends Cubit<SigninState> {
       } else {
         emit(SigninFailure(errmessege: 'somthing went wrong'));
       }
-     
-    }
-     catch (e) {
+    } catch (e) {
       emit(
           SigninFailure(errmessege: 'Something went wrong. Please try again.'));
+    }
+  }
+
+  Future signinwithgoogle() async {
+    emit(SigninLoading());
+    try {
+      UserCredential user =
+          await FirebaseAuth.instance.signInWithProvider(GoogleAuthProvider());
+      emit(SigninSucces());
+    } catch (e) {
+      emit(SigninFailure(errmessege: e.toString()));
     }
   }
 }
