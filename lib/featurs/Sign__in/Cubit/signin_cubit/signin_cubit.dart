@@ -21,11 +21,8 @@ class SigninCubit extends Cubit<SigninState> {
       } else if (ex.code == 'wrong-password') {
         emit(SigninFailure(errmessege: 'wrong passord pleas  try again '));
       } else {
-        emit(SigninFailure(errmessege: 'somthing went wrong'));
+        emit(SigninFailure(errmessege: ex.code));
       }
-    } catch (e) {
-      emit(
-          SigninFailure(errmessege: 'Something went wrong. Please try again.'));
     }
   }
 
