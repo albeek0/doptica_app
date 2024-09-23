@@ -16,8 +16,8 @@ class SigninCubit extends Cubit<SigninState> {
           .signInWithEmailAndPassword(email: email, password: password);
       emit(SigninSucces());
     } on FirebaseAuthException catch (ex) {
-      if (ex.code == 'user-not-found') {
-        emit(SigninFailure(errmessege: 'the user is not found '));
+      if (ex.code == 'invalid-credential') {
+        emit(SigninFailure(errmessege: 'the user is not found or check your password '));
       } else if (ex.code == 'wrong-password') {
         emit(SigninFailure(errmessege: 'wrong passord pleas  try again '));
       } else {

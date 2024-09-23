@@ -40,7 +40,7 @@ class SignIn extends StatelessWidget {
               .pop(); // Dismiss the loading dialog
 
           if (state is SigninSucces) {
-            GoRouter.of(context).push(AppRouter.knavitagationView);
+            GoRouter.of(context).push(AppRouter.kteamsview);
           } else if (state is SigninFailure) {
             // Display the error dialog
             showDialog(
@@ -111,7 +111,6 @@ class SignIn extends StatelessWidget {
                     child: InkWell(
                       borderRadius: BorderRadius.circular(15.0),
                       onTap: () {
-                        
                         BlocProvider.of<SigninCubit>(context)
                             .signinwithgoogle();
                       },

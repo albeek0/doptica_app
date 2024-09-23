@@ -20,44 +20,44 @@ class SignUp extends StatelessWidget {
     TextEditingController newemail = TextEditingController();
     TextEditingController password = TextEditingController();
     TextEditingController conpassword = TextEditingController();
-   return BlocListener<SignUpCubit, SignUpState>(
-      listener: (context, state) {
-        if (state is SignUpLoading) {
-          showDialog(
-            context: context,
-            // Prevent manual dismissal
-            builder: (context) {
-              return const Center(
-                child: CircularProgressIndicator(
-                  color: kPrimaryColor,
-                ),
-              );
-            },
-          );
-        } else {
-          // Ensure the loading dialog is dismissed before showing any other dialogs or navigating
-          Navigator.of(context, rootNavigator: true)
-              .pop(); // Dismiss the loading dialog
-
-          if (state is SignUpSucces) {
-            GoRouter.of(context).push(AppRouter.knavitagationView);
-          } else if (state is SignUpfailed) {
-            // Display the error dialog
+    return BlocListener<SignUpCubit, SignUpState>(
+        listener: (context, state) {
+          if (state is SignUpLoading) {
             showDialog(
               context: context,
+              // Prevent manual dismissal
               builder: (context) {
-                return AlertDialog(
-                  elevation: 1000,
-                  backgroundColor: kSeconderyColor,
-                  title: const Text("Sign Up Error"),
-                  content: Text(
-                      state.errmessege), // Display the detailed error message
+                return const Center(
+                  child: CircularProgressIndicator(
+                    color: kPrimaryColor,
+                  ),
                 );
               },
             );
+          } else {
+            // Ensure the loading dialog is dismissed before showing any other dialogs or navigating
+            Navigator.of(context, rootNavigator: true)
+                .pop(); // Dismiss the loading dialog
+
+            if (state is SignUpSucces) {
+              GoRouter.of(context).push(AppRouter.kteamsview);
+            } else if (state is SignUpfailed) {
+              // Display the error dialog
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    elevation: 1000,
+                    backgroundColor: kSeconderyColor,
+                    title: const Text("Sign Up Error"),
+                    content: Text(
+                        state.errmessege), // Display the detailed error message
+                  );
+                },
+              );
+            }
           }
-        }
-      },
+        },
         child: CustomeContainer(
           widget: Scaffold(
             appBar: AppBar(
@@ -97,11 +97,11 @@ class SignUp extends StatelessWidget {
                     ),
                     CustomeButton(
                         ontap: () {
-                        if (formkey.currentState!.validate()) {
-                          BlocProvider.of<SignUpCubit>(context)
-                              .signup(newemail.text, password.text);
-                        }
-                      },
+                          if (formkey.currentState!.validate()) {
+                            BlocProvider.of<SignUpCubit>(context)
+                                .signup(newemail.text, password.text);
+                          }
+                        },
                         text: "Continue",
                         color: kSeconderyColor),
                     const SizedBox(
@@ -141,4 +141,3 @@ class SignUp extends StatelessWidget {
         ));
   }
 }
-

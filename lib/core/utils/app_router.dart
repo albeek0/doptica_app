@@ -9,7 +9,6 @@ import 'package:doptica_app/featurs/profile_feature/profile_view.dart';
 import 'package:doptica_app/featurs/signup_feature.dart/sign_up.dart';
 import 'package:doptica_app/featurs/teams_view_faeture/teams_view.dart';
 import 'package:doptica_app/featurs/welcome_feature/welcome.dart';
-import 'package:doptica_app/featurs/signup_feature.dart/sign_up2.dart';
 import 'package:doptica_app/featurs/tasks_featurs/widgets/tasks_view.dart';
 
 import 'package:go_router/go_router.dart';
@@ -75,12 +74,6 @@ abstract class AppRouter {
       GoRoute(
         path: kSignIn,
         builder: (context, state) => const SignIn(),
-      ),
-      GoRoute(
-        path: ksignup2,
-        builder: (context, state) => const SignUp2(
-          newmail: '',
-        ),
       ),
       GoRoute(
         path: kPostsScreen,
