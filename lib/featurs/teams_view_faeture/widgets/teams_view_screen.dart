@@ -1,7 +1,9 @@
+import 'package:doptica_app/core/utils/app_router.dart';
 import 'package:doptica_app/core/utils/app_style.dart';
 import 'package:doptica_app/core/widgets/custome_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
 
 class TeamViewScreen extends StatelessWidget {
   const TeamViewScreen({super.key});
@@ -34,7 +36,9 @@ class TeamViewScreen extends StatelessWidget {
                 style: AppStyles.styleOpenSansRegular24,
               ),
               trailing: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    GoRouter.of(context).push(AppRouter.kcreatteamview);
+                  },
                   icon: const Icon(
                     Icons.add,
                     size: 30,
@@ -45,15 +49,18 @@ class TeamViewScreen extends StatelessWidget {
                 height: 80,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Expanded(
               child: ListView.builder(
-                itemCount: 12,
+                itemCount: 4,
                 itemBuilder: (BuildContext context, int index) {
                   return Column(
                     children: [
+                      const SizedBox(
+                        height: 8,
+                      ),
                       ListTile(
                         title: const Text(
                           "ADCMK SKSCM ",
@@ -65,8 +72,10 @@ class TeamViewScreen extends StatelessWidget {
                           height: 80,
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
+                      Container(
+                        color: Colors.white,
+                        height: 1,
+                        width: 230,
                       )
                     ],
                   );
