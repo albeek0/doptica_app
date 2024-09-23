@@ -2,7 +2,6 @@ import 'package:doptica_app/core/utils/app_router.dart';
 import 'package:doptica_app/core/utils/app_style.dart';
 import 'package:doptica_app/core/widgets/custome_container.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
 class TeamViewScreen extends StatelessWidget {
@@ -10,6 +9,9 @@ class TeamViewScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenwidth = MediaQuery.of(context).size.width;
+    final screenheight = MediaQuery.of(context).size.height;
+
     return CustomeContainer(
         widget: Scaffold(
       backgroundColor: Colors.transparent,
@@ -17,14 +19,16 @@ class TeamViewScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Container(
+            SizedBox(
               height: 75,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Image.asset(width: 220, "assets/images/Logo Doptica f3.png"),
-                  const SizedBox(
-                    width: 40,
+                  Image.asset(
+                      width: screenwidth * 0.60,
+                      "assets/images/Logo Doptica f3.png"),
+                  SizedBox(
+                    width: screenwidth * 0.10,
                   ),
                   IconButton(onPressed: () {}, icon: const Icon(Icons.menu))
                 ],
@@ -45,12 +49,12 @@ class TeamViewScreen extends StatelessWidget {
                   )),
               leading: Image.asset(
                 "assets/images/Google__G__logo.svg.png",
-                width: 80,
-                height: 80,
+                width: screenwidth * 0.10,
+                height: screenheight * 0.10,
               ),
             ),
-            const SizedBox(
-              height: 10,
+            SizedBox(
+              height: screenheight * 0.01,
             ),
             Expanded(
               child: ListView.builder(
@@ -58,24 +62,36 @@ class TeamViewScreen extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) {
                   return Column(
                     children: [
-                      const SizedBox(
-                        height: 8,
+                      SizedBox(
+                        height: screenheight * 0.008,
                       ),
-                      ListTile(
-                        title: const Text(
-                          "ADCMK SKSCM ",
-                          style: AppStyles.styleOpenSansRegular24,
-                        ),
-                        leading: Image.asset(
-                          "assets/images/Google__G__logo.svg.png",
-                          width: 80,
-                          height: 80,
+                      InkWell(
+                        onTap: () {
+                          GoRouter.of(context)
+                              .push(AppRouter.knavitagationView);
+                        },
+                        child: ListTile(
+                          title: InkWell(
+                            onTap: () {
+                              GoRouter.of(context)
+                                  .push(AppRouter.knavitagationView);
+                            },
+                            child: const Text(
+                              "ADCMK SKSCM ",
+                              style: AppStyles.styleOpenSansRegular24,
+                            ),
+                          ),
+                          leading: Image.asset(
+                            "assets/images/Google__G__logo.svg.png",
+                            width: screenwidth * 0.15,
+                            height: screenheight * 0.15,
+                          ),
                         ),
                       ),
                       Container(
                         color: Colors.white,
                         height: 1,
-                        width: 230,
+                        width: screenwidth * 0.60,
                       )
                     ],
                   );

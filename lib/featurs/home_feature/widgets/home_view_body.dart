@@ -11,13 +11,14 @@ class HomeViewBody extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-
-    return Column(
-      children: [
-        const SizedBox(height: 40),
-        SizedBox(height: 325, child: CoustomGridView()),
-        const CustomCalender(),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          const SizedBox(height: 40),
+          SizedBox(height: 325, child: CoustomGridView()),
+          const CustomCalender(),
+        ],
+      ),
     );
   }
 }

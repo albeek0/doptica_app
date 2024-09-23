@@ -11,7 +11,7 @@ class CustomCalender extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           color: Colors.transparent, borderRadius: BorderRadius.circular(20)),
-      height: 220,
+      height: 250,
       width: 320,
       child: Column(
         children: [
@@ -32,7 +32,7 @@ class CustomCalender extends StatelessWidget {
           ),
           SizedBox(
             width: 221,
-            height: 169,
+            height: 190,
             child: CalendarDatePicker(
               initialDate: DateTime.now(),
               firstDate: DateTime.now(),

@@ -18,12 +18,12 @@ class PostsWidget extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                     color: const Color.fromARGB(238, 67, 67, 67),
-                    borderRadius: BorderRadius.circular(25)),
+                    borderRadius: BorderRadius.circular(15)),
                 child: Column(
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25)),
+                          borderRadius: BorderRadius.circular(15)),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(15),
                         child: Image.asset(
