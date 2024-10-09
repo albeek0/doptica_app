@@ -1,6 +1,7 @@
 import 'package:doptica_app/featurs/Sign__in/sign_in_feature.dart';
 import 'package:doptica_app/featurs/creat_taem_feature/creat_team_view.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/edit_profile_view.dart';
+import 'package:doptica_app/featurs/email_check_feature/email_check_view.dart';
 import 'package:doptica_app/featurs/groubs_feature/groubs_view.dart';
 import 'package:doptica_app/featurs/home_feature/home_view.dart';
 import 'package:doptica_app/featurs/navigation.dart';
@@ -15,6 +16,7 @@ import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
   // static const kNavigationView = '/';
+  static const keamilcheckview = '/';
   static const kcreatteamview = '/creatteamview';
   static const kteamsview = '/teamsview';
   static const kHomeView = '/HomeView';
@@ -25,12 +27,16 @@ abstract class AppRouter {
   static const ksignup = '/ksignup';
   static const ksignup2 = '/signup2';
   static const knavitagationView = '/navitagationView';
-  static const kSignIn = '/';
+  static const kSignIn = '/SignIn';
   static const kPostsScreen = '/PostsScreen';
   static const kgroubsview = '/groubsview';
 
   static final router = GoRouter(
     routes: [
+       GoRoute(
+        path: keamilcheckview,
+        builder: (context, state) => const EmailCheckView(),
+      ),
       GoRoute(
         path: kcreatteamview,
         builder: (context, state) => const CreatTeamView(),
