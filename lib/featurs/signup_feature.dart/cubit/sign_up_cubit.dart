@@ -8,6 +8,7 @@ part 'sign_up_state.dart';
 class SignUpCubit extends Cubit<SignUpState> {
   SignUpCubit() : super(SignUpInitial());
 
+ 
   Future<void> signup(String email, String password) async {
     emit(SignUpLoading());
     try {

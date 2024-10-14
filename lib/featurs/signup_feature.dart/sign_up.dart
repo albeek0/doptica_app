@@ -40,7 +40,7 @@ class SignUp extends StatelessWidget {
                 .pop(); // Dismiss the loading dialog
 
             if (state is SignUpSucces) {
-              GoRouter.of(context).push(AppRouter.kteamsview);
+              GoRouter.of(context).push(AppRouter.keamilcheckview);
             } else if (state is SignUpfailed) {
               // Display the error dialog
               showDialog(

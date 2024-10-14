@@ -1,5 +1,6 @@
 import 'package:doptica_app/core/utils/app_router.dart';
 import 'package:doptica_app/featurs/Sign__in/Cubit/signin_cubit/signin_cubit.dart';
+import 'package:doptica_app/featurs/email_check_feature/cubit/email_verification_cubit_cubit.dart';
 
 import 'package:doptica_app/featurs/signup_feature.dart/cubit/sign_up_cubit.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -18,7 +19,10 @@ class DopticaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  MultiBlocProvider(
-      providers: [
+      providers: [ BlocProvider<EmailVerificationCubitCubit>(
+          create: (context) => EmailVerificationCubitCubit(), // Initialize SignUpCubit
+        ),
+
         BlocProvider<SigninCubit>(
           create: (context) => SigninCubit(), // Initialize SignUpCubit
         ),

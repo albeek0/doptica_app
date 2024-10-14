@@ -17,6 +17,7 @@ class SignIn extends StatelessWidget {
     final formkey = GlobalKey<FormState>();
     TextEditingController email = TextEditingController();
     TextEditingController password = TextEditingController();
+
     // email.dispose();
     // password.dispose();
 
@@ -41,6 +42,8 @@ class SignIn extends StatelessWidget {
 
           if (state is SigninSucces) {
             GoRouter.of(context).push(AppRouter.kteamsview);
+          } else if (state is SigninVerifi) {
+            GoRouter.of(context).push(AppRouter.keamilcheckview);
           } else if (state is SigninFailure) {
             // Display the error dialog
             showDialog(
@@ -51,10 +54,13 @@ class SignIn extends StatelessWidget {
                   backgroundColor: kSeconderyColor,
                   title: const Text('Sign In Error'),
                   content: Text(
-                      state.errmessege), // Display the detailed error message
+                      state.errmessege), 
+                      
+                      // Display the detailed error message
                 );
               },
-            );
+            );          Navigator.of(context, rootNavigator: true)
+              .pop();
           }
         }
       },
