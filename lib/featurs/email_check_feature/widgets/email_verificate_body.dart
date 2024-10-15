@@ -2,15 +2,15 @@ import 'package:doptica_app/constans.dart';
 import 'package:doptica_app/core/utils/app_router.dart';
 import 'package:doptica_app/core/utils/app_style.dart';
 import 'package:doptica_app/core/widgets/custome_container.dart';
-import 'package:doptica_app/featurs/email_check_feature/cubit/email_verification_cubit_cubit.dart';
+import 'package:doptica_app/featurs/email_check_feature/cubit/email_verification_cubit.dart';
 import 'package:doptica_app/featurs/email_check_feature/widgets/time_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-class EmailCheckBody extends StatelessWidget {
-  const EmailCheckBody({super.key});
+class EmailVerificationBody extends StatelessWidget {
+  const EmailVerificationBody({super.key});
 
   @override
   Widget build(BuildContext context) {

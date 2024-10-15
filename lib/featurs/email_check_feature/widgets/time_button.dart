@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:doptica_app/constans.dart';
-import 'package:doptica_app/featurs/email_check_feature/cubit/email_verification_cubit_cubit.dart';
+import 'package:doptica_app/featurs/email_check_feature/cubit/email_verification_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

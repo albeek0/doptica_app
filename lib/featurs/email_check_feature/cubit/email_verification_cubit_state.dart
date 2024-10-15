@@ -1,4 +1,4 @@
-part of 'email_verification_cubit_cubit.dart';
+part of 'email_verification_cubit.dart';
 
 @immutable
 sealed class EmailVerificationCubitState {}

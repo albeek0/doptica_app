@@ -1,4 +1,4 @@
-import 'package:doptica_app/featurs/email_check_feature/widgets/email_check_body.dart';
+import 'package:doptica_app/featurs/email_check_feature/widgets/email_verificate_body.dart';
 import 'package:flutter/material.dart';
 
 class EmailCheckView extends StatelessWidget {
@@ -6,6 +6,6 @@ class EmailCheckView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return EmailCheckBody();
+    return const EmailVerificationBody();
   }
 }

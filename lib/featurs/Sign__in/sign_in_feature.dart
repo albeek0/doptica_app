@@ -59,7 +59,10 @@ class SignIn extends StatelessWidget {
                       // Display the detailed error message
                 );
               },
-            );          Navigator.of(context, rootNavigator: true)
+            );         
+          }
+          else {
+             Navigator.of(context, rootNavigator: true)
               .pop();
           }
         }
