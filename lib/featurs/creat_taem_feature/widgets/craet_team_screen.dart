@@ -51,7 +51,7 @@ class CreateTeamApp extends StatelessWidget {
               const SizedBox(height: 24),
               const TextField(
                 decoration: InputDecoration(
-                  labelText: 'Group Name (optional)',
+                  labelText: 'Group Name',
                   labelStyle: TextStyle(color: Colors.grey),
                   border: UnderlineInputBorder(),
                 ),
