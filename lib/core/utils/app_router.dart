@@ -18,13 +18,13 @@ abstract class AppRouter {
   // static const kNavigationView = '/';
   static const keamilcheckview = '/eamilcheckview';
   static const kcreatteamview = '/creatteamview';
-  static const kteamsview = '/';
+  static const kteamsview = '/kteamsview';
   static const kHomeView = '/HomeView';
   static const kEditProfileView = '/EditProfileView';
   static const kProfileView = '/ProfileView';
   static const kTasksView = '/TasksView';
   static const kwelcome = '/welcome';
-  static const ksignup = '/signup';
+  static const ksignup = '/';
   static const knavitagationView = '/navitagationView';
   static const kSignIn = '/SignIn';
   static const kPostsScreen = '/PostsScreen';

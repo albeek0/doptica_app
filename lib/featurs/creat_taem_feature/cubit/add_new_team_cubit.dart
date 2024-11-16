@@ -8,13 +8,12 @@ class AddNewTeamCubit extends Cubit<AddNewTeamState> {
   AddNewTeamCubit() : super(AddNewTeamInitial());
   final SupabaseClient supabase = Supabase.instance.client;
   Future<void> addnnewteam(String name, String description) async {
+    emit(CreatNewTeeamLoading());
     try {
       final res = await supabase.from('groups').insert({
         'name': name,
         'description': description,
       }).select();
-
-     
 
       final groupId = res[0]['id'];
       final userId = FirebaseAuth.instance.currentUser!.uid;
@@ -24,7 +23,9 @@ class AddNewTeamCubit extends Cubit<AddNewTeamState> {
         'group_id': groupId,
         'role': 'admin',
       });
+      
     } catch (error) {
+      emit(failedTeamAdd());
       print('Error creating group: $error');
     }
   }

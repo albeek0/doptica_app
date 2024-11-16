@@ -3,6 +3,7 @@ import 'package:doptica_app/core/utils/app_router.dart';
 import 'package:doptica_app/core/utils/app_style.dart';
 import 'package:doptica_app/core/widgets/custome_container.dart';
 import 'package:doptica_app/featurs/Sign__in/Cubit/signin_cubit/signin_cubit.dart';
+import 'package:doptica_app/featurs/teams_view_faeture/cubit/teams_view_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -104,6 +105,7 @@ class SignIn extends StatelessWidget {
                         if (formkey.currentState!.validate()) {
                           BlocProvider.of<SigninCubit>(context).signin(
                               email: email.text, password: password.text);
+                               context.read<TeamsViewCubit>().fetchGroups();
                         }
                       },
                       text: "Sign In",

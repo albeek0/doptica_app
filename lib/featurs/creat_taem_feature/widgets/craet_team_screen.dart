@@ -38,7 +38,7 @@ class CreateTeamApp extends StatelessWidget {
         } else if (state is SuccesfulTeamAdd) {
           Navigator.of(context, rootNavigator: true).pop();
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text("Group created successfully!")),
+            const SnackBar(content: Text("Team Created!")),
           );
         } else { Navigator.of(context, rootNavigator: true).pop();
           const SnackBar(content: Text("Somthing Went Wrong Try Again"));

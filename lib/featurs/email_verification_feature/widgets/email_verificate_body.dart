@@ -4,6 +4,7 @@ import 'package:doptica_app/core/utils/app_style.dart';
 import 'package:doptica_app/core/widgets/custome_container.dart';
 import 'package:doptica_app/featurs/email_verification_feature/cubit/email_verification_cubit.dart';
 import 'package:doptica_app/featurs/email_verification_feature/widgets/time_button.dart';
+import 'package:doptica_app/featurs/teams_view_faeture/cubit/teams_view_cubit.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -34,6 +35,7 @@ class EmailVerificationBody extends StatelessWidget {
           Navigator.of(context, rootNavigator: true).pop();
         }
         if (state is EmailVerificationSucces) {
+          context.read<TeamsViewCubit>().fetchGroups();
           GoRouter.of(context).push(AppRouter.kcreatteamview);
         } else if (state is EmailVerificationFailed) {
           // Display the error dialog
