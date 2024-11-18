@@ -17,7 +17,16 @@ Future<void> main() async {
   await Supabase.initialize(
       url: 'https://bitmfkbskybmpxpnfjjo.supabase.co',
       anonKey:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJpdG1ma2Jza3libXB4cG5mampvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzE0MTk1MjcsImV4cCI6MjA0Njk5NTUyN30.GCDtrbdXEKbOvHzw32L-UmunbM0FlSAw1-mZhaIjihc',);
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJpdG1ma2Jza3libXB4cG5mampvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzE0MTk1MjcsImV4cCI6MjA0Njk5NTUyN30.GCDtrbdXEKbOvHzw32L-UmunbM0FlSAw1-mZhaIjihc',
+          authOptions: const FlutterAuthClientOptions(
+    authFlowType: AuthFlowType.pkce,
+  ),
+  realtimeClientOptions: const RealtimeClientOptions(
+    logLevel: RealtimeLogLevel.info,
+  ),
+  storageOptions: const StorageClientOptions(
+    retryAttempts: 10,
+  ),);
 
   runApp(const DopticaApp());
 }
