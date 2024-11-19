@@ -8,7 +8,7 @@ final class AddNewTeamInitial extends AddNewTeamState {}
 final class CreatNewTeeamLoading extends AddNewTeamState {}
 
 final class SuccesfulTeamAdd extends AddNewTeamState {
-  final Map<String, dynamic> group;
+  final  group;
   SuccesfulTeamAdd(this.group);
 }
 

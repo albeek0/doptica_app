@@ -19,7 +19,7 @@ class AddNewTeamCubit extends Cubit<AddNewTeamState> {
       return;
     }
     final adminId = user.uid;
-
+    print("user id here >>>>>>>>>>>>>>>>>>>>>>>>>>>>" + user.uid);
     emit(CreatNewTeeamLoading());
 
     try {
@@ -28,29 +28,27 @@ class AddNewTeamCubit extends Cubit<AddNewTeamState> {
         'name': groupName,
         'Description': groupDescription,
         'admin_id': adminId,
-      }); 
-      print("here########");
-      // Ensure `response` has data
-      if (response['id'] != null) {
-        final groupId = response['id'];
-        print("is here @@@@@@@@@@@@@@@@@@");
-        // Insert admin into `group_members`
-        final memberResponse =
-            await Supabase.instance.client.from('group_members').insert({
-          'group_id': groupId,
-          'user_id': adminId,
-          'role': 'admin',
-        });
+      }); // Ensures that the inserted row data is returned
 
-        // Handle successful admin insertion
-        if (memberResponse != null) {
-          emit(SuccesfulTeamAdd(response));
-          print("done");
-        } else {
-          emit(FailedTeamAdd('Failed to add admin to the group.'));
-          print("failed3");
-        }
-      }
+      final uuid = await Supabase.instance.client
+          .from('groups')
+          .select()
+          .eq('admin_id', adminId);
+      print(uuid);
+      final groupId = uuid[0]['id'];
+      // Access the first row's id
+
+      print("Group ID: $groupId");
+
+      await Supabase.instance.client.from('groups_members').insert({
+        'group_id': groupId,
+        'user_id': adminId,
+        'role': 'admin',
+      });
+      print(response);
+      // Insert admin into `group_members`
+      emit(SuccesfulTeamAdd(response));
+      // Handle successful admin insertion
     } on PostgrestException catch (error) {
       emit(FailedTeamAdd(error.message));
     }
