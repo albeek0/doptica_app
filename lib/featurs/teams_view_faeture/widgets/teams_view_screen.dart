@@ -58,15 +58,12 @@ class _TeamViewScreenState extends State<TeamViewScreen> {
                     SizedBox(
                       height: 75,
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image.asset(
                             width: screenwidth * 0.60,
                             "assets/images/Logo Doptica f3.png",
                           ),
-                          SizedBox(width: screenwidth * 0.10),
-                          IconButton(
-                              onPressed: () {}, icon: const Icon(Icons.menu)),
                         ],
                       ),
                     ),
@@ -78,6 +75,8 @@ class _TeamViewScreenState extends State<TeamViewScreen> {
                       trailing: IconButton(
                           onPressed: () {
                             GoRouter.of(context).push(AppRouter.kcreatteamview);
+
+                            context.read<TeamsViewCubit>().fetchGroups();
                           },
                           icon: const Icon(
                             Icons.add,
@@ -132,6 +131,21 @@ class _TeamViewScreenState extends State<TeamViewScreen> {
                         },
                       ),
                     ),
+                    SizedBox(
+                      height: screenheight * 0.10,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        BlocProvider.of<TeamsViewCubit>(context).fetchGroups();
+                      },
+                      child: const Text(
+                        "Refresh",
+                        style: AppStyles.styleOpenSansBold16,
+                      ),
+                    ),
+                    SizedBox(
+                      height: screenheight * 0.08,
+                    )
                   ],
                 ),
               ),
@@ -148,15 +162,12 @@ class _TeamViewScreenState extends State<TeamViewScreen> {
                     SizedBox(
                       height: 75,
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image.asset(
                             width: screenwidth * 0.60,
                             "assets/images/Logo Doptica f3.png",
                           ),
-                          SizedBox(width: screenwidth * 0.10),
-                          IconButton(
-                              onPressed: () {}, icon: const Icon(Icons.menu)),
                         ],
                       ),
                     ),
@@ -182,10 +193,22 @@ class _TeamViewScreenState extends State<TeamViewScreen> {
                     SizedBox(height: screenheight * 0.30),
                     Center(
                       child: Text(
-                        "No Groubs Yet !",
-                        style: AppStyles.styleOpenSansBold24,
+                        state.error,
+                        style: AppStyles.styleOpenSansBold20,
                       ),
-                    )
+                    ),
+                    SizedBox(
+                      height: screenheight * 0.10,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        BlocProvider.of<TeamsViewCubit>(context).fetchGroups();
+                      },
+                      child: const Text(
+                        "Refresh",
+                        style: AppStyles.styleOpenSansBold16,
+                      ),
+                    ),
                   ],
                 ),
               ),

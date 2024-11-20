@@ -24,13 +24,13 @@ class TeamsViewCubit extends Cubit<TeamsViewState> {
         return;
       }
 
-      final groupIds = response.map((item) => item['group_id']).toList();
+      // final groupIds = response.map((item) => item['group_id']).toList();
 
       // Fetch group details
       final groupsResponse = await Supabase.instance.client
           .from('groups')
           .select('*')
-          .inFilter('id', groupIds);
+          .eq('admin_id', userId);
 
       emit(TeamsViewSuccess(groups: groupsResponse));
     } catch (error) {

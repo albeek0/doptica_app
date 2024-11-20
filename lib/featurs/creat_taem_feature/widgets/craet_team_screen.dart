@@ -1,5 +1,6 @@
 import 'package:doptica_app/core/widgets/custome_container.dart';
 import 'package:doptica_app/featurs/creat_taem_feature/cubit/add_new_team_cubit.dart';
+import 'package:doptica_app/featurs/teams_view_faeture/cubit/teams_view_cubit.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -46,6 +47,8 @@ class CreateTeamApp extends StatelessWidget {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text("Team Created!")),
           );
+          BlocProvider.of<TeamsViewCubit>(context).fetchGroups();
+          Navigator.of(context, rootNavigator: true).pop();
         } else if (state is FailedTeamAdd) {
           Navigator.of(context, rootNavigator: true).pop();
           showDialog(
@@ -53,20 +56,18 @@ class CreateTeamApp extends StatelessWidget {
             barrierDismissible:
                 false, // Prevents the user from dismissing the dialog
             builder: (BuildContext context) {
-              return  Dialog(
+              return Dialog(
                 backgroundColor: Colors.white,
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      
                       const SizedBox(width: 16),
                       Text(
                         state.error,
                         style: const TextStyle(color: Colors.black),
                       ),
-                    
                     ],
                   ),
                 ),
@@ -165,9 +166,9 @@ class CreateTeamApp extends StatelessWidget {
                 final userId = FirebaseAuth.instance.currentUser!.uid;
 
                 if (userId.isNotEmpty) {
-                  context
-                      .read<AddNewTeamCubit>()
+                 BlocProvider.of<AddNewTeamCubit>(context)
                       .addGroup(groupName, groupdesc);
+                       BlocProvider.of<TeamsViewCubit>(context).fetchGroups();
                 }
               }
             },
