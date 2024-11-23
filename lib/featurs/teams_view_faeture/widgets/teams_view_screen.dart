@@ -114,11 +114,18 @@ class _TeamViewScreenState extends State<TeamViewScreen> {
                                       style: AppStyles.styleOpenSansRegular24,
                                     ),
                                   ),
-                                  leading: Image.asset(
-                                    "assets/images/Google__G__logo.svg.png",
-                                    width: screenwidth * 0.15,
-                                    height: screenheight * 0.15,
-                                  ),
+                                  leading: group['photo_url'] != null
+                                      ? Image.network(
+                                          group['photo_url'],
+                                          width: screenwidth * 0.15,
+                                          height: screenheight * 0.15,
+                                          fit: BoxFit.cover,
+                                        )
+                                      : Image.asset(
+                                          "assets/images/Google__G__logo.svg.png",
+                                          width: screenwidth * 0.15,
+                                          height: screenheight * 0.15,
+                                        ),
                                 ),
                               ),
                               Container(
