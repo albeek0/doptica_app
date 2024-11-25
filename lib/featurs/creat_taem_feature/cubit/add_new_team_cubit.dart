@@ -13,7 +13,7 @@ class AddNewTeamCubit extends Cubit<AddNewTeamState> {
 
   Future<void> addGroup(
       String groupName, String groupDescription, XFile? image) async {
-    print("here###@@@@@@@#####");
+    
     final user = FirebaseAuth.instance.currentUser;
     if (user == null) {
       print("in user");
