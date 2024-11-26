@@ -20,3 +20,19 @@ final class TeamsViewSuccess extends TeamsViewState {
 
   TeamsViewSuccess({required this.groups});
 }
+
+final class GroubeEditLoading extends TeamsViewState {}
+
+final class GroubeEditSuccess extends TeamsViewState {}
+
+final class GroubeEditFailure extends TeamsViewState {}
+
+final class GroubeDeleteLoading extends TeamsViewState {}
+
+final class GroubeDeleteSuccess extends TeamsViewState {}
+
+final class GroubeDeleteFailure extends TeamsViewState {
+  final String erorr;
+
+  GroubeDeleteFailure(this.erorr);
+}

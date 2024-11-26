@@ -26,7 +26,7 @@ class AddNewTeamCubit extends Cubit<AddNewTeamState> {
 
     try {
       final filePath =
-          'group_photos/group_photos/${DateTime.now().millisecondsSinceEpoch}_${image?.name}';
+          'group_photos/${DateTime.now().millisecondsSinceEpoch}_${image?.name}';
       final fileBytes = await image?.readAsBytes();
 
       final response2 = await Supabase.instance.client.storage
@@ -36,7 +36,7 @@ class AddNewTeamCubit extends Cubit<AddNewTeamState> {
 
       // Get the public URL for the uploaded file
       final publicUrl = Supabase.instance.client.storage
-          .from('group_photos/group_photos')
+          .from('group_photos')
           .getPublicUrl(filePath);
 
       // Insert into `groups` table
@@ -82,7 +82,7 @@ class AddNewTeamCubit extends Cubit<AddNewTeamState> {
       try {
         // Define the file path and upload to Supabase storage
         final filePath =
-            'group_photos/group_photos/group_photos/${DateTime.now().millisecondsSinceEpoch}_${image?.name}';
+            '${DateTime.now().millisecondsSinceEpoch}_${image?.name}';
         final fileBytes = await image?.readAsBytes();
 
         final response = await Supabase.instance.client.storage
@@ -92,7 +92,7 @@ class AddNewTeamCubit extends Cubit<AddNewTeamState> {
 
         // Get the public URL for the uploaded file
         final publicUrl = Supabase.instance.client.storage
-            .from('group_photos/')
+            .from('')
             .getPublicUrl(filePath);
 
         return publicUrl;
@@ -103,8 +103,9 @@ class AddNewTeamCubit extends Cubit<AddNewTeamState> {
 
       // User didn't select an image
     }
+else{
 
-    try {
+   try {
       // Define the file path and upload to Supabase storage
       final filePath =
           'group_photos/${DateTime.now().millisecondsSinceEpoch}_${image.name}';
@@ -117,7 +118,7 @@ class AddNewTeamCubit extends Cubit<AddNewTeamState> {
 
       // Get the public URL for the uploaded file
       final publicUrl = Supabase.instance.client.storage
-          .from('group_photos/')
+          .from('group_photos')
           .getPublicUrl(filePath);
 
       return publicUrl;
@@ -125,6 +126,8 @@ class AddNewTeamCubit extends Cubit<AddNewTeamState> {
       debugPrint('Error uploading image: $e');
       return null;
     }
+}
+   
   }
 }
 // i am in here recevid a null 

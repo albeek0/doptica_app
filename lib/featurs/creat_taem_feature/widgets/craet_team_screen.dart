@@ -122,8 +122,8 @@ class CreateTeamApp extends StatelessWidget {
                           final XFile? image = await picker.pickImage(
                               source: ImageSource.gallery);
                           imagefile = image!;
-                          BlocProvider.of<AddNewTeamCubit>(context)
-                              .uploadGroupPhoto(image);
+                          // BlocProvider.of<AddNewTeamCubit>(context)
+                          //     .uploadGroupPhoto(image);
                         },
                       ),
                     ),

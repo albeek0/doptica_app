@@ -2,6 +2,7 @@ import 'package:doptica_app/core/utils/app_router.dart';
 import 'package:doptica_app/core/utils/app_style.dart';
 import 'package:doptica_app/core/widgets/custome_container.dart';
 import 'package:doptica_app/featurs/teams_view_faeture/cubit/teams_view_cubit.dart';
+import 'package:doptica_app/featurs/teams_view_faeture/widgets/groubs_list_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -83,61 +84,16 @@ class _TeamViewScreenState extends State<TeamViewScreen> {
                             size: 30,
                           )),
                       leading: Image.asset(
-                        "assets/images/Google__G__logo.svg.png",
+                        "assets/images/groube_def.png",
                         width: screenwidth * 0.10,
                         height: screenheight * 0.10,
                       ),
                     ),
-                    SizedBox(height: screenheight * 0.01),
-                    Expanded(
-                      child: ListView.builder(
-                        itemCount: groups.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          final group = groups[index];
-
-                          return Column(
-                            children: [
-                              SizedBox(height: screenheight * 0.008),
-                              InkWell(
-                                onTap: () {
-                                  GoRouter.of(context)
-                                      .push(AppRouter.knavitagationView);
-                                },
-                                child: ListTile(
-                                  title: InkWell(
-                                    onTap: () {
-                                      GoRouter.of(context)
-                                          .push(AppRouter.knavitagationView);
-                                    },
-                                    child: Text(
-                                      group['name'] ?? 'Unnamed Group',
-                                      style: AppStyles.styleOpenSansRegular24,
-                                    ),
-                                  ),
-                                  leading: group['photo_url'] != null
-                                      ? Image.network(
-                                          group['photo_url'],
-                                          width: screenwidth * 0.15,
-                                          height: screenheight * 0.15,
-                                          fit: BoxFit.cover,
-                                        )
-                                      : Image.asset(
-                                          "assets/images/Google__G__logo.svg.png",
-                                          width: screenwidth * 0.15,
-                                          height: screenheight * 0.15,
-                                        ),
-                                ),
-                              ),
-                              Container(
-                                color: Colors.white,
-                                height: 1,
-                                width: screenwidth * 0.60,
-                              ),
-                            ],
-                          );
-                        },
-                      ),
-                    ),
+                    SizedBox(height: screenheight * 0.03),
+                    GroubsListBody(
+                        groups: groups,
+                        screenheight: screenheight,
+                        screenwidth: screenwidth),
                     SizedBox(
                       height: screenheight * 0.10,
                     ),
@@ -151,7 +107,7 @@ class _TeamViewScreenState extends State<TeamViewScreen> {
                       ),
                     ),
                     SizedBox(
-                      height: screenheight * 0.08,
+                      height: screenheight * 0.10,
                     )
                   ],
                 ),
@@ -221,9 +177,37 @@ class _TeamViewScreenState extends State<TeamViewScreen> {
               ),
             ),
           );
+        } else if (state is GroubeDeleteSuccess) {
+          return AlertDialog(
+            actions: [
+              ElevatedButton(
+                  onPressed: () {
+                    BlocProvider.of<TeamsViewCubit>(context).fetchGroups();
+                    GoRouter.of(context).pop();
+                  },
+                  child: const Text("OK"))
+            ],
+            content: const Text("Deleted Successfully"),
+          );
+        }  else if (state is GroubeDeleteFailure) {
+          AlertDialog(
+            actions: [
+              ElevatedButton(
+                  onPressed: () {
+                    BlocProvider.of<TeamsViewCubit>(context).fetchGroups();
+                    GoRouter.of(context).pop();
+                  },
+                  child: const Text("OK"))
+            ],
+            content: const Text(
+                "failed to delete the Groube ,pleas Try Again Or check Your Inetrnet "),
+          );
+
+          print(state.erorr);
         } else {
           return const SizedBox.shrink();
         }
+        return const SizedBox.shrink();
       },
     );
   }
