@@ -15,7 +15,7 @@ class Custombotton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: const ButtonStyle(
-            backgroundColor: MaterialStatePropertyAll(kGridColor)),
+            backgroundColor: WidgetStatePropertyAll(kGridColor)),
         onPressed: () {
           _showSnachBar(context);
         },

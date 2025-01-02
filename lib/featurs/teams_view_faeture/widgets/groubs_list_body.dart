@@ -32,7 +32,9 @@ class GroubsListBody extends StatelessWidget {
                   GoRouter.of(context).push(AppRouter.knavitagationView);
                 },
                 child: ListTile(
-                  trailing: PopupMenuExample(groubeid: group['id'],),
+                  trailing: PopupMenuExample(groubeid: group['id'],
+                  photourl: group["photo_url"],
+                  ),
                   title: InkWell(
                     onTap: () {
                       GoRouter.of(context).push(AppRouter.knavitagationView);

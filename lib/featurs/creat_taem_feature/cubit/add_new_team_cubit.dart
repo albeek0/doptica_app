@@ -13,7 +13,6 @@ class AddNewTeamCubit extends Cubit<AddNewTeamState> {
 
   Future<void> addGroup(
       String groupName, String groupDescription, XFile? image) async {
-    
     final user = FirebaseAuth.instance.currentUser;
     if (user == null) {
       print("in user");
@@ -21,53 +20,82 @@ class AddNewTeamCubit extends Cubit<AddNewTeamState> {
       return;
     }
     final adminId = user.uid;
-    print("user id here >>>>>>>>>>>>>>>>>>>>>>>>>>>>" + user.uid);
+    print("user id here >>>>>>>>>>>>>>>>>>>>>>>>>>>>${user.uid}");
     emit(CreatNewTeeamLoading());
 
     try {
-      final filePath =
-          'group_photos/${DateTime.now().millisecondsSinceEpoch}_${image?.name}';
-      final fileBytes = await image?.readAsBytes();
+      if (image == null) {
+        final response = await Supabase.instance.client.from('groups').insert({
+          'name': groupName,
+          'Description': groupDescription,
+          'admin_id': adminId,
+        }); // Ensures that the inserted row data is returned
+        // final groupId = response.data[0]['id'];
+        // print(groupId);
+        final uuid = await Supabase.instance.client
+            .from('groups')
+            .select('id')
+            .eq('name', groupName)
+            .single();
+        print(uuid);
+        final groupId = uuid['id'];
+        // Access the first row's id
 
-      final response2 = await Supabase.instance.client.storage
-          .from('group_photos')
-          .uploadBinary(filePath, fileBytes!);
-      print(response2);
+        print("Group ID: $groupId");
 
-      // Get the public URL for the uploaded file
-      final publicUrl = Supabase.instance.client.storage
-          .from('group_photos')
-          .getPublicUrl(filePath);
+        await Supabase.instance.client.from('groups_members').insert({
+          'group_id': groupId,
+          'user_id': adminId,
+          'role': 'admin',
+        });
+        print(response);
+        // Insert admin into `group_members`
+        emit(SuccesfulTeamAdd(response));
+      } else {
+        final filePath =
+            'group_photos/${DateTime.now().millisecondsSinceEpoch}_${image.name}';
+        final fileBytes = await image.readAsBytes();
 
-      // Insert into `groups` table
+        final response2 = await Supabase.instance.client.storage
+            .from('group_photos')
+            .uploadBinary(filePath, fileBytes);
+        print(response2);
 
-      final response = await Supabase.instance.client.from('groups').insert({
-        'name': groupName,
-        'Description': groupDescription,
-        'admin_id': adminId,
-        'photo_url': publicUrl
-      }); // Ensures that the inserted row data is returned
-      // final groupId = response.data[0]['id'];
-      // print(groupId);
-      final uuid = await Supabase.instance.client
-          .from('groups')
-          .select('id')
-          .eq('name', groupName)
-          .single();
-      print(uuid);
-      final groupId = uuid['id'];
-      // Access the first row's id
+        // Get the public URL for the uploaded file
+        final publicUrl = Supabase.instance.client.storage
+            .from('group_photos')
+            .getPublicUrl(filePath);
 
-      print("Group ID: $groupId");
+        // Insert into `groups` table
 
-      await Supabase.instance.client.from('groups_members').insert({
-        'group_id': groupId,
-        'user_id': adminId,
-        'role': 'admin',
-      });
-      print(response);
-      // Insert admin into `group_members`
-      emit(SuccesfulTeamAdd(response));
+        final response = await Supabase.instance.client.from('groups').insert({
+          'name': groupName,
+          'Description': groupDescription,
+          'admin_id': adminId,
+          'photo_url': publicUrl
+        }); // Ensures that the inserted row data is returned
+        // final groupId = response.data[0]['id'];
+        // print(groupId);
+        final uuid = await Supabase.instance.client
+            .from('groups')
+            .select('id')
+            .eq('name', groupName)
+            .single();
+        print(uuid);
+        final groupId = uuid['id'];
+        // Access the first row's id
+
+        print("Group ID: $groupId");
+
+        await Supabase.instance.client.from('groups_members').insert({
+          'group_id': groupId,
+          'user_id': adminId,
+          'role': 'admin',
+        });
+        print(response);
+        // Insert admin into `group_members`
+        emit(SuccesfulTeamAdd(response));
+      }
 
       // Handle successful admin insertion
     } on PostgrestException catch (error) {
@@ -91,9 +119,8 @@ class AddNewTeamCubit extends Cubit<AddNewTeamState> {
         print(response);
 
         // Get the public URL for the uploaded file
-        final publicUrl = Supabase.instance.client.storage
-            .from('')
-            .getPublicUrl(filePath);
+        final publicUrl =
+            Supabase.instance.client.storage.from('').getPublicUrl(filePath);
 
         return publicUrl;
       } catch (e) {
@@ -102,32 +129,29 @@ class AddNewTeamCubit extends Cubit<AddNewTeamState> {
       }
 
       // User didn't select an image
+    } else {
+      try {
+        // Define the file path and upload to Supabase storage
+        final filePath =
+            'group_photos/${DateTime.now().millisecondsSinceEpoch}_${image.name}';
+        final fileBytes = await image.readAsBytes();
+
+        final response = await Supabase.instance.client.storage
+            .from('group_photos')
+            .uploadBinary(filePath, fileBytes);
+        print(response);
+
+        // Get the public URL for the uploaded file
+        final publicUrl = Supabase.instance.client.storage
+            .from('group_photos')
+            .getPublicUrl(filePath);
+
+        return publicUrl;
+      } catch (e) {
+        debugPrint('Error uploading image: $e');
+        return null;
+      }
     }
-else{
-
-   try {
-      // Define the file path and upload to Supabase storage
-      final filePath =
-          'group_photos/${DateTime.now().millisecondsSinceEpoch}_${image.name}';
-      final fileBytes = await image.readAsBytes();
-
-      final response = await Supabase.instance.client.storage
-          .from('group_photos')
-          .uploadBinary(filePath, fileBytes);
-      print(response);
-
-      // Get the public URL for the uploaded file
-      final publicUrl = Supabase.instance.client.storage
-          .from('group_photos')
-          .getPublicUrl(filePath);
-
-      return publicUrl;
-    } catch (e) {
-      debugPrint('Error uploading image: $e');
-      return null;
-    }
-}
-   
   }
 }
 // i am in here recevid a null 

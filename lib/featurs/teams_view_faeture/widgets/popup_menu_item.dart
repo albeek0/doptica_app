@@ -1,10 +1,14 @@
+
 import 'package:doptica_app/featurs/teams_view_faeture/cubit/teams_view_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class PopupMenuExample extends StatelessWidget {
-  const PopupMenuExample({super.key, required this.groubeid});
+  const PopupMenuExample(
+      {super.key, required this.groubeid, required this.photourl});
   final String groubeid;
+  final String photourl;
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +26,8 @@ class PopupMenuExample extends StatelessWidget {
                 builder: (BuildContext context) {
                   return AlertDialog(
                     title: const Text("Confirm Delete"),
-                    content:
-                        Text("Are You Sure You Want To Delete The Groub ?!"),
+                    content: const Text(
+                        "Are You Sure You Want To Delete The Groub ?!"),
                     actions: [
                       TextButton(
                         onPressed: () => Navigator.of(context).pop(), // Cancel
@@ -33,9 +37,11 @@ class PopupMenuExample extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.red),
                         onPressed: () {
-                          BlocProvider.of<TeamsViewCubit>(context)
-                              .deletegroube(groubeid);
-                          Navigator.of(context).pop();
+                           BlocProvider.of<TeamsViewCubit>(context)
+                              .deletegroube(groubeid, photourl);
+                          // BlocProvider.of<TeamsViewCubit>(context)
+                          //     .fetchGroups();
+                          GoRouter.of(context).pop();
                         }, // Confirm
                         child: const Text("Delete"),
                       ),

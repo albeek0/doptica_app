@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomeFormFiled extends StatelessWidget {
-  CustomeFormFiled({
+  const CustomeFormFiled({
     super.key,
     required this.label,
     required this.controller,

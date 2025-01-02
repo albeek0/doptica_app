@@ -31,7 +31,7 @@ class _NavitagationViewState extends State<NavitagationView> {
         height: 60,
         backgroundColor: kSeconderyColor,
         indicatorColor: kPrimaryColor,
-        overlayColor: const MaterialStatePropertyAll(Colors.transparent),
+        overlayColor: const WidgetStatePropertyAll(Colors.transparent),
         selectedIndex: selected,
         onDestinationSelected: (value) {
           setState(() {

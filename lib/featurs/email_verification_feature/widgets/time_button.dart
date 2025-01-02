@@ -51,7 +51,7 @@ class LimitedButtonScreenState extends State<LimitedButtonScreen> {
     return ElevatedButton(
       style: ButtonStyle(
           backgroundColor:
-              MaterialStateColor.resolveWith((states) => kSeconderyColor)),
+              WidgetStateColor.resolveWith((states) => kSeconderyColor)),
       onPressed: _isButtonDisabled ? null : _onButtonPressed,
       child: _isButtonDisabled
           ? Text('Wait for $_countdown seconds') // Display countdown

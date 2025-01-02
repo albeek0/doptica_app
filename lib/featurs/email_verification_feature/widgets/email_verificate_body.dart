@@ -96,7 +96,7 @@ class EmailVerificationBody extends StatelessWidget {
                   ElevatedButton(
                     style: const ButtonStyle(
                         backgroundColor:
-                            MaterialStatePropertyAll(kSeconderyColor)),
+                            WidgetStatePropertyAll(kSeconderyColor)),
                     onPressed: () {
                       BlocProvider.of<EmailVerificationCubitCubit>(context)
                           .emailcheck();

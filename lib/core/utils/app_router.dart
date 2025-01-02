@@ -8,7 +8,7 @@ import 'package:doptica_app/featurs/navigation.dart';
 import 'package:doptica_app/featurs/posts_feature/posts_screen.dart';
 import 'package:doptica_app/featurs/profile_feature/profile_view.dart';
 import 'package:doptica_app/featurs/signup_feature.dart/sign_up.dart';
-import 'package:doptica_app/featurs/teams_view_faeture/teams_view.dart';
+import 'package:doptica_app/featurs/teams_view_faeture/widgets/teams_view_screen.dart';
 import 'package:doptica_app/featurs/welcome_feature/welcome.dart';
 import 'package:doptica_app/featurs/tasks_featurs/widgets/tasks_view.dart';
 
@@ -42,7 +42,7 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kteamsview,
-        builder: (context, state) => const TeamsView(),
+        builder: (context, state) => const TeamViewScreen(),
       ),
       GoRoute(
         path: kgroubsview,
