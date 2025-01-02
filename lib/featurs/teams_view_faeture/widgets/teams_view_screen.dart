@@ -1,6 +1,7 @@
 import 'package:doptica_app/core/utils/app_router.dart';
 import 'package:doptica_app/core/utils/app_style.dart';
 import 'package:doptica_app/core/widgets/custome_container.dart';
+import 'package:doptica_app/featurs/creat_taem_feature/cubit/add_new_team_cubit.dart';
 import 'package:doptica_app/featurs/teams_view_faeture/cubit/teams_view_cubit.dart';
 import 'package:doptica_app/featurs/teams_view_faeture/widgets/groubs_list_body.dart';
 import 'package:flutter/material.dart';
@@ -70,6 +71,7 @@ class TeamViewScreen extends StatelessWidget {
                         ),
                         trailing: IconButton(
                             onPressed: () {
+                               context.read<AddNewTeamCubit>().resetImage();
                               GoRouter.of(context)
                                   .push(AppRouter.kcreatteamview);
 

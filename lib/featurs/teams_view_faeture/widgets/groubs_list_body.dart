@@ -33,7 +33,7 @@ class GroubsListBody extends StatelessWidget {
                 },
                 child: ListTile(
                   trailing: PopupMenuExample(groubeid: group['id'],
-                  photourl: group["photo_url"],
+                  photourl: group["photo_url"] ?? "https://bitmfkbskybmpxpnfjjo.supabase.co/storage/v1/object/public/group_photos/group_photos/groube_def.png?t=2025-01-02T14%3A50%3A21.105Z" ,
                   ),
                   title: InkWell(
                     onTap: () {

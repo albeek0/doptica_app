@@ -16,3 +16,9 @@ final class FailedTeamAdd extends AddNewTeamState {
   final String error;
   FailedTeamAdd( this.error);
 }
+class AddNewTeamImagePicked extends AddNewTeamState {
+  final XFile? imageFile;
+
+  AddNewTeamImagePicked(this.imageFile);
+}
+

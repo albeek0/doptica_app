@@ -1,5 +1,3 @@
-
-
 import 'dart:io';
 
 import 'package:doptica_app/core/widgets/custome_container.dart';
@@ -11,16 +9,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
 
-class CreateTeamApp extends StatelessWidget {
-  const CreateTeamApp({super.key});
+class CreateTeamView extends StatelessWidget {
+  const CreateTeamView({super.key});
 
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
     final groupNameController = TextEditingController();
     final groupdescriptionController = TextEditingController();
-    final ImagePicker picker = ImagePicker();
-  XFile? imagefile ;
+    // final ImagePicker picker = ImagePicker();
+    // XFile? imagefile;
 
     return BlocListener<AddNewTeamCubit, AddNewTeamState>(
       listener: (context, state) {
@@ -109,23 +107,34 @@ class CreateTeamApp extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Center(
-                    child: CircleAvatar(
-                      radius: 40,
-                      backgroundColor:
-                          Colors.grey[300], // Light grey for placeholder
-                      
-                      // ignore: unnecessary_null_comparison
-                      child:  imagefile != null ? Image.file(File(imagefile.path))
-                      : IconButton(
-                        icon: const Icon(Icons.camera_alt, color: Colors.white),
-                        onPressed: () async {
-                          final XFile? image = await picker.pickImage(
-                              source: ImageSource.gallery);
-                          imagefile = image!;
-                          // BlocProvider.of<AddNewTeamCubit>(context)
-                          //     .uploadGroupPhoto(image);
-                        },
-                      ),
+                    child: BlocBuilder<AddNewTeamCubit, AddNewTeamState>(
+                      builder: (context, state) {
+                        final cubit = context.read<AddNewTeamCubit>();
+                        final imageFile = cubit.imageFile;
+
+                        return CircleAvatar(
+                          radius: 40,
+                          backgroundColor: Colors.grey[300],
+                          backgroundImage: imageFile != null
+                              ? FileImage(File(imageFile.path))
+                              : null,
+                          child: imageFile == null
+                              ? IconButton(
+                                  icon: const Icon(Icons.camera_alt,
+                                      color: Colors.white),
+                                  onPressed: () async {
+                                    final picker = ImagePicker();
+                                    final XFile? pickedImage = await picker
+                                        .pickImage(source: ImageSource.gallery);
+
+                                    if (pickedImage != null) {
+                                      cubit.pickImage(pickedImage);
+                                    }
+                                  },
+                                )
+                              : null,
+                        );
+                      },
                     ),
                   ),
                   const SizedBox(height: 24),
@@ -178,8 +187,10 @@ class CreateTeamApp extends StatelessWidget {
                 final userId = FirebaseAuth.instance.currentUser!.uid;
 
                 if (userId.isNotEmpty) {
+                  final imageFile = BlocProvider.of<AddNewTeamCubit>(context).imageFile;
+
                   BlocProvider.of<AddNewTeamCubit>(context)
-                      .addGroup(groupName, groupdesc, imagefile);
+                      .addGroup(groupName, groupdesc, imageFile);
                   BlocProvider.of<TeamsViewCubit>(context).fetchGroups();
                 }
               }

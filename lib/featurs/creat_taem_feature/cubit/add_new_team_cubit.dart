@@ -9,7 +9,21 @@ import 'package:image_picker/image_picker.dart';
 part 'add_new_team_state.dart';
 
 class AddNewTeamCubit extends Cubit<AddNewTeamState> {
+   XFile? imageFile;
   AddNewTeamCubit() : super(AddNewTeamInitial());
+
+
+ void resetImage() {
+    imageFile = null;
+    emit(AddNewTeamInitial()); // Reset state
+  }
+
+
+
+ void pickImage(XFile pickedImage) {
+    imageFile = pickedImage;
+    emit(AddNewTeamImagePicked(imageFile!)); // Emit a new state to notify UI
+  }
 
   Future<void> addGroup(
       String groupName, String groupDescription, XFile? image) async {
