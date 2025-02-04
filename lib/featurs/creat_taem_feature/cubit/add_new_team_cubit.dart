@@ -88,8 +88,7 @@ class AddNewTeamCubit extends Cubit<AddNewTeamState> {
           'admin_id': adminId,
           'photo_url': publicUrl
         }); // Ensures that the inserted row data is returned
-        // final groupId = response.data[0]['id'];
-        // print(groupId);
+       
         final uuid = await Supabase.instance.client
             .from('groups')
             .select('id')

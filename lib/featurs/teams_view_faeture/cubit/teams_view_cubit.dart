@@ -24,8 +24,7 @@ class TeamsViewCubit extends Cubit<TeamsViewState> {
         return;
       }
 
-      // final groupIds = response.map((item) => item['group_id']).toList();
-
+    
       // Fetch group details
       final groupsResponse = await Supabase.instance.client
           .from('groups')

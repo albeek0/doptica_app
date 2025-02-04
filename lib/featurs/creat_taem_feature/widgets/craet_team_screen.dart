@@ -17,9 +17,6 @@ class CreateTeamView extends StatelessWidget {
     final formKey = GlobalKey<FormState>();
     final groupNameController = TextEditingController();
     final groupdescriptionController = TextEditingController();
-    // final ImagePicker picker = ImagePicker();
-    // XFile? imagefile;
-
     return BlocListener<AddNewTeamCubit, AddNewTeamState>(
       listener: (context, state) {
         if (state is CreatNewTeeamLoading) {

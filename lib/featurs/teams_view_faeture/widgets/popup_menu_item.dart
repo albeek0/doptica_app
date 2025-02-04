@@ -39,8 +39,7 @@ class PopupMenuExample extends StatelessWidget {
                         onPressed: () {
                            BlocProvider.of<TeamsViewCubit>(context)
                               .deletegroube(groubeid, photourl);
-                          // BlocProvider.of<TeamsViewCubit>(context)
-                          //     .fetchGroups();
+                        
                           GoRouter.of(context).pop();
                         }, // Confirm
                         child: const Text("Delete"),

@@ -1,9 +1,9 @@
 import 'package:doptica_app/constans.dart';
 import 'package:doptica_app/core/widgets/customebutton.dart';
 import 'package:doptica_app/core/widgets/custom_app_bar_new.dart';
-import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/circleavatar.dart';
+import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/circle_avatar.dart';
 import 'package:doptica_app/core/widgets/custome_container.dart';
-import 'package:doptica_app/featurs/profile_feature/widgets/IconWithText.dart';
+import 'package:doptica_app/featurs/profile_feature/widgets/icon_with_text.dart';
 import 'package:flutter/material.dart';
 
 class ProfileView extends StatelessWidget {
@@ -14,7 +14,7 @@ class ProfileView extends StatelessWidget {
     return CustomeContainer(
       widget: Scaffold(
 
-          // bottomNavigationBar: const CutomeNavBar(),
+          
           backgroundColor: Colors.transparent,
           appBar: const CuotomeAppBar(
             label: 'Profile View',
@@ -67,7 +67,7 @@ class ProfileView extends StatelessWidget {
                   height: 3,
                   color: Colors.white,
                 ),
-                const IconWithText(
+                const IconWithText (
                     iconData: Icons.settings_outlined, text: "Settings"),
                 const IconWithText(
                     iconData: Icons.support_agent_outlined, text: "Support"),

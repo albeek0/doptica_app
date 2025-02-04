@@ -19,7 +19,7 @@ class _NavitagationViewState extends State<NavitagationView> {
   int selected = 0;
   List<Widget> listWidgets = const [
     HomeView(),
-   GroubsView(),
+    GroubsView(),
     PostsScreen(),
     TasksView(),
   ];
@@ -58,22 +58,3 @@ class _NavitagationViewState extends State<NavitagationView> {
     );
   }
 }
-// BottomNavigationBar(
-//         onTap: (value) {
-//           setState(() {
-//             selected = value;
-//           });
-//         },
-//         currentIndex: selected,
-//         selectedItemColor: Colors.amber,
-//         type: BottomNavigationBarType.fixed,
-//         backgroundColor: kPrimaryColor,
-//         items: const [
-//           BottomNavigationBarItem(
-//             icon: Icon(Icons.home),
-//             label: "",
-//           ),
-//           BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
-//           BottomNavigationBarItem(icon: Icon(Icons.settings), label: ""),
-//           BottomNavigationBarItem(icon: Icon(Icons.task), label: "")
-//         ]);

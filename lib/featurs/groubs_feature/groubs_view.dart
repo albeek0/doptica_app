@@ -25,7 +25,7 @@ class GroubsView extends StatelessWidget {
                     "assets/images/groubs.png",
                   )),
               Text(
-                "no groubs yet !",
+                "No Groubs Yet !",
                 style: AppStyles.styleOpenSansBold24,
               )
             ],

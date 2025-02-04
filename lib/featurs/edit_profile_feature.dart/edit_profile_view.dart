@@ -1,6 +1,6 @@
 import 'package:doptica_app/core/widgets/custom_app_bar_new.dart';
-import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/circleavatar.dart';
-import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/customeformfiled.dart';
+import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/circle_avatar.dart';
+import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/custome_form_filed.dart';
 import 'package:doptica_app/featurs/edit_profile_feature.dart/widget/cutome_hint_text.dart';
 import 'package:doptica_app/core/widgets/custome_container.dart';
 import 'package:flutter/material.dart';
